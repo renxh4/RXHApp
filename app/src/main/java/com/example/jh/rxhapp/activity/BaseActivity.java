@@ -50,6 +50,10 @@ public class BaseActivity extends AppCompatActivity {
     protected void addMainView(View view) {
         mMainView.addView(view);
     }
+    protected void addMainView(int id) {
+        View main = View.inflate(this, id, null);
+        mMainView.addView(main);
+    }
     //获取状态栏的高度
     private int getStatusBarHeight() {
         Class<?> c = null;
