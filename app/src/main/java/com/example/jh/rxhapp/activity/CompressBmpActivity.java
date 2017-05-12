@@ -80,15 +80,11 @@ public class CompressBmpActivity extends BaseActivity implements View.OnClickLis
             @Override
             public void toFile(HashMap<String, CompressBean> map) {
                 CompressBean compressBean = map.get(CompressBmpToFile.KEY);
-                if (compressBean.path == CompressBmpToFile.NOT_COMPRESS) {
-                    Toast.makeText(CompressBmpActivity.this, "没有压缩", Toast.LENGTH_SHORT).show();
-                } else {
                     float fileSize = getFileSize(compressBean.file);
                     Bitmap bitmap = BitmapFactory.decodeFile(compressBean.path);
                     float bitmapsize = getBitmapsize(bitmap);
                     mYasuoText.setText("原图：bitmapsize=" + bitmapsize + "MB / filesize=" + fileSize);
                     mYasuoImage.setImageBitmap(bitmap);
-                }
             }
         }, photoPath, "renyasuo", this);
 
