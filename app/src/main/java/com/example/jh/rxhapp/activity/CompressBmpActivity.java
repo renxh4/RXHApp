@@ -83,7 +83,7 @@ public class CompressBmpActivity extends BaseActivity implements View.OnClickLis
                     float fileSize = getFileSize(compressBean.file);
                     Bitmap bitmap = BitmapFactory.decodeFile(compressBean.path);
                     float bitmapsize = getBitmapsize(bitmap);
-                    mYasuoText.setText("原图：bitmapsize=" + bitmapsize + "MB / filesize=" + fileSize);
+                    mYasuoText.setText("压缩后：bitmapsize=" + bitmapsize + "MB / filesize=" + fileSize);
                     mYasuoImage.setImageBitmap(bitmap);
             }
         }, photoPath, "renyasuo", this);

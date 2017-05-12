@@ -19,7 +19,8 @@
         <activity android:name=".activity.BaseActivity" />
         <activity android:name=".activity.ViewPagerActivity" />
         <activity android:name=".activity.MaterialDesignActivity" />
-        <activity android:name=".activity.CompressBmpActivity"></activity>
+        <activity android:name=".activity.CompressBmpActivity" />
+        <activity android:name=".activity.HtmlToTextActivity"></activity>
     </application>
 
 </manifest>
