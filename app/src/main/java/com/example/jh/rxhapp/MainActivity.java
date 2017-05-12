@@ -1,24 +1,18 @@
 package com.example.jh.rxhapp;
 
-import android.content.Intent;
-import android.graphics.Color;
-import android.os.Build;
-import android.support.design.widget.AppBarLayout;
-import android.support.design.widget.CollapsingToolbarLayout;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.support.v7.widget.Toolbar;
+import android.support.v7.widget.LinearLayoutManager;
+import android.support.v7.widget.RecyclerView;
 import android.view.View;
-import android.widget.Button;
-import android.widget.EditText;
 
 import com.example.jh.rxhapp.activity.BaseActivity;
-import com.example.jh.rxhapp.activity.ViewPagerActivity;
-
-import java.lang.reflect.Field;
+import com.example.jh.rxhapp.adapter.MainRecycleAdapter;
+import com.example.jh.rxhapp.utils.PermissionUtils;
 
 public class MainActivity extends BaseActivity implements View.OnClickListener {
 
+
+    private RecyclerView mRecyclerView;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -28,6 +22,10 @@ public class MainActivity extends BaseActivity implements View.OnClickListener {
 
     private void initView() {
         addMainView(R.layout.activity_main);
+        mRecyclerView = (RecyclerView) findViewById(R.id.main_recycle_view);
+        mRecyclerView.setAdapter(new MainRecycleAdapter(this));
+        mRecyclerView.setLayoutManager(new LinearLayoutManager(this));
+        PermissionUtils.checkPermission(this, PermissionUtils.MY_PERMISSIONS_REQUEST_READ_EXTERNAL_STORAGE);
     }
 
 

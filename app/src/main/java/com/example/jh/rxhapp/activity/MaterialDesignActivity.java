@@ -20,7 +20,6 @@ public class MaterialDesignActivity extends AppCompatActivity implements View.On
     private Toolbar mToolbar;
     private CollapsingToolbarLayoutState state;
     private CollapsingToolbarLayout collapsingToolbarLayout;
-    private Button toobarButton;
     private EditText appBarEdittext;
     private AppBarLayout app_bar;
 
@@ -39,9 +38,7 @@ public class MaterialDesignActivity extends AppCompatActivity implements View.On
     }
 
     private void initView() {
-        setContentView(R.layout.activity_main);
-        toobarButton = (Button) findViewById(R.id.toobar_button);
-        toobarButton.setOnClickListener(this);
+        setContentView(R.layout.activity_material_design);
         collapsingToolbarLayout = (CollapsingToolbarLayout) findViewById(R.id.collapsing_toolbar);
         app_bar = (AppBarLayout) findViewById(R.id.appbar);
         appBarEdittext = (EditText) findViewById(R.id.appbar_edittext);
@@ -57,18 +54,15 @@ public class MaterialDesignActivity extends AppCompatActivity implements View.On
                 if (verticalOffset == 0) {
                     if (state != CollapsingToolbarLayoutState.EXPANDED) {
                         state = CollapsingToolbarLayoutState.EXPANDED;//修改状态标记为展开
-                        toobarButton.setVisibility(View.GONE);
                     }
                 } else if (Math.abs(verticalOffset) >= appBarLayout.getTotalScrollRange()) {
                     if (state != CollapsingToolbarLayoutState.COLLAPSED) {
                         state = CollapsingToolbarLayoutState.COLLAPSED;//修改状态标记为折叠
-                        // toobarButton.setVisibility(View.VISIBLE);
                     }
                 } else {
                     if (state != CollapsingToolbarLayoutState.INTERNEDIATE) {
                         if (state == CollapsingToolbarLayoutState.COLLAPSED) {
                             state = CollapsingToolbarLayoutState.INTERNEDIATE;//修改状态标记为中间
-                            toobarButton.setVisibility(View.GONE);
                         }
 
                     }
@@ -94,9 +88,6 @@ public class MaterialDesignActivity extends AppCompatActivity implements View.On
     @Override
     public void onClick(View v) {
         switch (v.getId()) {
-            case R.id.toobar_button:
-                this.startActivity(new Intent(this, ViewPagerActivity.class));
-                break;
         }
 
     }

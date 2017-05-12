@@ -7,7 +7,49 @@
     android:orientation="vertical"
     tools:context="com.example.jh.rxhapp.MainActivity">
 
+    <android.support.v7.widget.RecyclerView
+        android:id="@+id/main_recycle_view"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1">
+
+    </android.support.v7.widget.RecyclerView>
+
+    <RadioGroup
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/white"
+        android:orientation="horizontal">
+
+        <RadioButton
+            android:id="@+id/rbChat"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="bottom"
+            android:layout_weight="1"
+            android:background="@color/white"
+            android:button="@null"
+            android:checked="true"
+            android:drawableTop="@drawable/radio_button_drawable_selector"
+            android:gravity="center_horizontal|bottom"
+            android:paddingTop="2dp"
+            android:textColor="@color/radio_button_color_selector"
+            android:text="微信" />
+        <RadioButton
+            style="@style/main_radiobutton_icon"
+            android:drawableTop="@drawable/ic_launcher"
+            android:text="通讯录" />
+        <RadioButton
+            style="@style/main_radiobutton_icon"
+            android:drawableTop="@drawable/ic_launcher"
+            android:text="发现" />
+        <RadioButton
+            style="@style/main_radiobutton_icon"
+            android:drawableTop="@drawable/ic_launcher"
+            android:text="我" />
 
 
 
+
+    </RadioGroup>
 </LinearLayout>

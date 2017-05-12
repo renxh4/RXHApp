@@ -47,6 +47,8 @@ public class BaseActivity extends AppCompatActivity {
 
     }
 
+
+
     protected void addMainView(View view) {
         mMainView.addView(view);
     }

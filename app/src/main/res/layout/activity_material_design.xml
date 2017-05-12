@@ -55,13 +55,7 @@
                 android:visibility="visible"
                 app:popupTheme="@style/ThemeOverlay.AppCompat.Light">
 
-                <Button
-                    android:id="@+id/toobar_button"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:text="跳转下个页面"
-                    android:textSize="20sp"
-                    android:visibility="gone"/>
+
             </android.support.v7.widget.Toolbar>
 
         </android.support.design.widget.CollapsingToolbarLayout>
