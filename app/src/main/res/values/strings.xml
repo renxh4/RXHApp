@@ -1,3 +1,5 @@
 <resources>
     <string name="app_name">RXHApp</string>
+    <string name="_lease_open_permissions">_lease_open_permissions</string>
+    <string name="choose_wallpaper">choose_wallpaper</string>
 </resources>

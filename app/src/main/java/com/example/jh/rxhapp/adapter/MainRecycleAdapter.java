@@ -9,8 +9,10 @@ import android.view.ViewGroup;
 import android.widget.Button;
 
 import com.example.jh.rxhapp.R;
+import com.example.jh.rxhapp.activity.CameraLiveWallpaperActivity;
 import com.example.jh.rxhapp.activity.CompressBmpActivity;
 import com.example.jh.rxhapp.activity.HtmlToTextActivity;
+import com.example.jh.rxhapp.activity.MagicWallPaperActivity;
 import com.example.jh.rxhapp.activity.MaterialDesignActivity;
 
 import java.util.ArrayList;
@@ -34,6 +36,8 @@ public class MainRecycleAdapter extends RecyclerView.Adapter {
         mList.add("MaterialDesign");
         mList.add("图片压缩");
         mList.add("TextViewForHtml");
+        mList.add("透明桌面");
+        mList.add("视频壁纸");
     }
 
     @Override
@@ -75,6 +79,10 @@ public class MainRecycleAdapter extends RecyclerView.Adapter {
                         mContext.startActivity(new Intent(mContext, CompressBmpActivity.class));
                     }else if (getAdapterPosition()==2){
                         mContext.startActivity(new Intent(mContext, HtmlToTextActivity.class));
+                    }else if (getAdapterPosition()==3){
+                        mContext.startActivity(new Intent(mContext, CameraLiveWallpaperActivity.class));
+                    }else if (getAdapterPosition()==4){
+                        mContext.startActivity(new Intent(mContext, MagicWallPaperActivity.class));
                     }
                     break;
             }
