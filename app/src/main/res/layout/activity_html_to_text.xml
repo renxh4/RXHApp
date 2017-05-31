@@ -10,4 +10,25 @@
     android:paddingTop="@dimen/activity_vertical_margin"
     tools:context="com.example.jh.rxhapp.activity.HtmlToTextActivity">
 
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <org.sufficientlysecure.htmltextview.HtmlTextView
+                android:id="@+id/html_textview"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+
+            <com.example.jh.rxhapp.utils.HtmlTextView
+                android:id="@+id/local_html"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+
+        </LinearLayout>
+    </ScrollView>
 </RelativeLayout>
