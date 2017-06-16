@@ -71,7 +71,7 @@
                 android:resource="@xml/livewallpaper" />
         </service>
 
-        <activity android:name=".activity.IPActivity"></activity>
+        <activity android:name=".activity.IPActivity"/>
     </application>
 
 </manifest>

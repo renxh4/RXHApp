@@ -7,6 +7,8 @@ import android.content.pm.PackageManager;
 import android.support.v4.app.ActivityCompat;
 import android.support.v4.content.ContextCompat;
 
+import com.example.jh.rxhapp.R;
+
 public class PermissionUtils {
     public static final int MY_PERMISSIONS_REQUEST_READ_EXTERNAL_STORAGE = 1;
 
@@ -18,4 +20,5 @@ public class PermissionUtils {
                     code);
         }
     }
+
 }
