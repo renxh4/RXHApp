@@ -8,14 +8,11 @@ import android.graphics.BitmapFactory;
 import com.example.jh.rxhapp.Constants;
 import com.example.jh.rxhapp.bean.CompressBean;
 
-import java.io.ByteArrayInputStream;
 import java.io.ByteArrayOutputStream;
 import java.io.File;
 import java.io.FileOutputStream;
 import java.util.HashMap;
 import java.util.List;
-import java.util.Map;
-import java.util.StringTokenizer;
 
 import cn.finalteam.galleryfinal.model.PhotoInfo;
 import rx.Observable;
@@ -65,7 +62,7 @@ public class CompressBmpToFile {
             BitmapFactory.Options opts = new BitmapFactory.Options();
             opts.inJustDecodeBounds = true;
             BitmapFactory.decodeFile(list.get(0).getPhotoPath(), opts);
-            int i = Utils.computeSampleSize(opts, -1, 1000 * 1000);
+            int i = utils.computeSampleSize(opts, -1, 1000 * 1000);
             opts.inSampleSize = i;
             opts.inJustDecodeBounds = false;
             opts.inInputShareable = true;

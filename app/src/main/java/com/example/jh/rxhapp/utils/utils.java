@@ -6,7 +6,7 @@ import android.graphics.BitmapFactory;
  * Created by jh on 2017/5/12.
  */
 
-public class Utils {
+public class utils {
 
 
     public static int computeSampleSize(BitmapFactory.Options options,

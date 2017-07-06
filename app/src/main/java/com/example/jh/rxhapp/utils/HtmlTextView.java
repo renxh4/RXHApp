@@ -1,7 +1,6 @@
 package com.example.jh.rxhapp.utils;
 
 import android.content.Context;
-import android.content.Intent;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.graphics.drawable.BitmapDrawable;
@@ -19,7 +18,6 @@ import android.widget.TextView;
 
 import org.xml.sax.XMLReader;
 
-import java.io.File;
 import java.io.IOException;
 
 import okhttp3.Response;
@@ -101,7 +99,7 @@ public class HtmlTextView extends TextView {
                     opts.inJustDecodeBounds = true;
                     //BitmapFactory.decodeStream(inputStream, null, opts);
                     BitmapFactory.decodeByteArray(bytes, 0, bytes.length, opts);
-                    int i = Utils.computeSampleSize(opts, -1, 1000 * 1000);
+                    int i = utils.computeSampleSize(opts, -1, 1000 * 1000);
                     opts.inSampleSize = i;
                     opts.inJustDecodeBounds = false;
                     opts.inInputShareable = true;
