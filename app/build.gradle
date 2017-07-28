@@ -15,18 +15,43 @@ android {
         release {
             minifyEnabled false
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+            ndk {
+                // 需要将 armeabi-x64 架构过滤掉
+                abiFilters "armeabi", "armeabi-v7a"
+            }
         }
+
     }
 }
 
+task(yugangshuo).doLast {
+    println "start execute yuangshuo"
+    haveFun()
+}
+
+def haveFun() {
+    println "have fun!"
+    System.out.println("have fun!");
+    1
+    def file1 = new File("a.txt")
+    def file2 = new File("a.txt")
+    assert file1 == file2
+    assert !file1.is(file2)
+}
+
+class Book {
+    private String name
+    String getName() { return name }
+    void setName(String name) { this.name = name }
+}
+
 dependencies {
-    compile fileTree(dir: 'libs', include: ['*.jar'])
+    compile fileTree(include: ['*.jar'], dir: 'libs')
     androidTestCompile('com.android.support.test.espresso:espresso-core:2.2.2', {
         exclude group: 'com.android.support', module: 'support-annotations'
     })
     compile 'com.android.support:appcompat-v7:25.3.1'
     testCompile 'junit:junit:4.12'
-
     compile 'com.android.support:design:25.3.1'
     compile 'cn.finalteam:galleryfinal:1.4.3'
     compile 'com.android.support:support-v4:25.3.1'
@@ -35,4 +60,6 @@ dependencies {
     compile 'io.reactivex:rxjava:1.1.0'
     compile 'io.reactivex:rxandroid:1.1.0'
     compile 'org.sufficientlysecure:html-textview:3.3'
+    compile files('src/main/jniLibs/txrtmpsdk.jar')
+    compile files('src/main/jniLibs/ugcupload.jar')
 }

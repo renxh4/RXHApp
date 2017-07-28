@@ -13,8 +13,10 @@ import com.example.jh.rxhapp.activity.CameraLiveWallpaperActivity;
 import com.example.jh.rxhapp.activity.CompressBmpActivity;
 import com.example.jh.rxhapp.activity.HtmlToTextActivity;
 import com.example.jh.rxhapp.activity.IPActivity;
+import com.example.jh.rxhapp.activity.LiveActivity;
 import com.example.jh.rxhapp.activity.MagicWallPaperActivity;
 import com.example.jh.rxhapp.activity.MaterialDesignActivity;
+import com.example.jh.rxhapp.activity.PlayLiveActivity;
 import com.example.jh.rxhapp.activity.ViewPagerActivity;
 
 import java.util.ArrayList;
@@ -42,6 +44,8 @@ public class MainRecycleAdapter extends RecyclerView.Adapter {
         mList.add("视频壁纸");
         mList.add("获取IP");
         mList.add("tablayout+viewpager");
+        mList.add("直播");
+        mList.add("自定义控件");
     }
 
     @Override
@@ -91,6 +95,10 @@ public class MainRecycleAdapter extends RecyclerView.Adapter {
                         mContext.startActivity(new Intent(mContext, IPActivity.class));
                     } else if (getAdapterPosition() == 6) {
                         mContext.startActivity(new Intent(mContext, ViewPagerActivity.class));
+                    } else if (getAdapterPosition() == 7) {
+                        mContext.startActivity(new Intent(mContext, LiveActivity.class));
+                    } else if (getAdapterPosition() == 8) {
+                        mContext.startActivity(new Intent(mContext, PlayLiveActivity.class));
                     }
                     break;
             }

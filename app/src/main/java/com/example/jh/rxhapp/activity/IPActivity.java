@@ -20,11 +20,20 @@ import java.util.Enumeration;
 public class IPActivity extends BaseActivity {
 
     private TextView ipText;
+    int i;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         initView();
+
+        if (i < 30) {
+            //此处i小于30
+        } else if (i < 60) {
+            //此处 i 大于等于30 小于60
+        } else {
+            //此处 i 大于等于60
+        }
     }
 
     private void initView() {
@@ -54,7 +63,6 @@ public class IPActivity extends BaseActivity {
                 ((i >> 16) & 0xFF) + "." +
                 (i >> 24 & 0xFF);
     }
-    
 
     public static String getHostIP() {
 
