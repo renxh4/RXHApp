@@ -76,7 +76,17 @@
 
         <activity android:name=".activity.IPActivity" />
         <activity android:name=".activity.LiveActivity" />
-        <activity android:name=".activity.PlayLiveActivity"></activity>
+        <activity android:name=".activity.PlayLiveActivity" />
+
+        <service
+            android:name=".service.MyService"
+            android:enabled="true"
+            android:exported="true" />
+        <service
+            android:name=".service.MyIntentService"
+            android:exported="false" />
+
+        <activity android:name=".activity.TestServiceActivity"></activity>
     </application>
 
 </manifest>
