@@ -23,6 +23,11 @@ public class IPActivity extends BaseActivity {
     int i;
 
     @Override
+    public int setMainView() {
+        return R.layout.activity_ip;
+    }
+
+    @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         initView();
@@ -37,7 +42,6 @@ public class IPActivity extends BaseActivity {
     }
 
     private void initView() {
-        addMainView(R.layout.activity_ip);
         ipText = (TextView) findViewById(R.id.ip_text);
         String hostIP = getHostIP();
         ipText.setText(hostIP);

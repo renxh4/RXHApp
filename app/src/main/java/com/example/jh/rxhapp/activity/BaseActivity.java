@@ -15,18 +15,20 @@ import com.example.jh.rxhapp.R;
 
 import java.lang.reflect.Field;
 
-public class BaseActivity extends AppCompatActivity {
+public abstract class BaseActivity extends AppCompatActivity {
 
     private FrameLayout mMainView;
     private Toolbar mToolbar;
-
+    public abstract int setMainView();
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_base);
         initBaseView();
         initToobar();
+        addMainView(setMainView());
     }
+
     //浸入式状态栏
     private void initToobar() {
         if (Build.VERSION.SDK_INT >= 21) {
@@ -44,6 +46,7 @@ public class BaseActivity extends AppCompatActivity {
 
     private void initBaseView() {
         mMainView = (FrameLayout) findViewById(R.id.base_body);
+
 
     }
 

@@ -20,6 +20,12 @@ public class CameraLiveWallpaperActivity extends BaseActivity {
     private static final int PERMISSIONS_REQUEST_CAMERA = 454;
     private Context mContext;
     static final String PERMISSION_CAMERA = Manifest.permission.CAMERA;
+
+    @Override
+    public int setMainView() {
+        return R.layout.activity_camera_live_wallpaper;
+    }
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -27,7 +33,6 @@ public class CameraLiveWallpaperActivity extends BaseActivity {
     }
 
     private void initView() {
-        addMainView(R.layout.activity_camera_live_wallpaper);
         mContext=this;
         findViewById(R.id.camera_button)
                 .setOnClickListener(new View.OnClickListener() {

@@ -49,6 +49,11 @@ public class CompressBmpActivity extends BaseActivity implements View.OnClickLis
     private int REQUEST_CAMERA = 1000;
 
     @Override
+    public int setMainView() {
+        return R.layout.activity_compress_bmp;
+    }
+
+    @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         initView();
@@ -61,7 +66,6 @@ public class CompressBmpActivity extends BaseActivity implements View.OnClickLis
     }
 
     private void initView() {
-        addMainView(R.layout.activity_compress_bmp);
         mButton = (Button) findViewById(R.id.compress_yasuo_button);
         mYasuoImage = (ImageView) findViewById(R.id.compress_yasuo_image);
         mYuantuImage = (ImageView) findViewById(R.id.compress_yuantu_image);

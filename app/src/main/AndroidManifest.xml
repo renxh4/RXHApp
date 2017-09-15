@@ -86,7 +86,9 @@
             android:name=".service.MyIntentService"
             android:exported="false" />
 
-        <activity android:name=".activity.TestServiceActivity"></activity>
+        <activity android:name=".activity.TestServiceActivity" />
+        <activity android:name=".activity.CustomViewActivity" />
+        <activity android:name=".activity.ViewActivity"></activity>
     </application>
 
 </manifest>

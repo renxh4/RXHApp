@@ -6,17 +6,21 @@ import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.view.textservice.TextServicesManager;
 import android.widget.Button;
 
 import com.example.jh.rxhapp.R;
 import com.example.jh.rxhapp.activity.CameraLiveWallpaperActivity;
 import com.example.jh.rxhapp.activity.CompressBmpActivity;
+import com.example.jh.rxhapp.activity.CustomViewActivity;
 import com.example.jh.rxhapp.activity.HtmlToTextActivity;
 import com.example.jh.rxhapp.activity.IPActivity;
 import com.example.jh.rxhapp.activity.LiveActivity;
 import com.example.jh.rxhapp.activity.MagicWallPaperActivity;
 import com.example.jh.rxhapp.activity.MaterialDesignActivity;
 import com.example.jh.rxhapp.activity.PlayLiveActivity;
+import com.example.jh.rxhapp.activity.TestServiceActivity;
+import com.example.jh.rxhapp.activity.ViewActivity;
 import com.example.jh.rxhapp.activity.ViewPagerActivity;
 
 import java.util.ArrayList;
@@ -45,7 +49,9 @@ public class MainRecycleAdapter extends RecyclerView.Adapter {
         mList.add("获取IP");
         mList.add("tablayout+viewpager");
         mList.add("直播");
-        mList.add("自定义控件");
+        mList.add("handler使用");
+        mList.add("自定义view");
+        mList.add("view的移动");
     }
 
     @Override
@@ -98,7 +104,11 @@ public class MainRecycleAdapter extends RecyclerView.Adapter {
                     } else if (getAdapterPosition() == 7) {
                         mContext.startActivity(new Intent(mContext, LiveActivity.class));
                     } else if (getAdapterPosition() == 8) {
-                        mContext.startActivity(new Intent(mContext, PlayLiveActivity.class));
+                        mContext.startActivity(new Intent(mContext, TestServiceActivity.class));
+                    } else if (getAdapterPosition() == 9) {
+                        mContext.startActivity(new Intent(mContext, CustomViewActivity.class));
+                    } else if (getAdapterPosition() == 10) {
+                        mContext.startActivity(new Intent(mContext, ViewActivity.class));
                     }
                     break;
             }

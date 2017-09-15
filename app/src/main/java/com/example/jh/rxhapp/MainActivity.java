@@ -17,6 +17,11 @@ public class MainActivity extends BaseActivity implements View.OnClickListener {
     private RecyclerView mRecyclerView;
 
     @Override
+    public int setMainView() {
+        return R.layout.activity_main;
+    }
+
+    @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         initView();
@@ -31,7 +36,6 @@ public class MainActivity extends BaseActivity implements View.OnClickListener {
     }
 
     private void initView() {
-        addMainView(R.layout.activity_main);
         mRecyclerView = (RecyclerView) findViewById(R.id.main_recycle_view);
         mRecyclerView.setAdapter(new MainRecycleAdapter(this));
         mRecyclerView.setLayoutManager(new LinearLayoutManager(this));

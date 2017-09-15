@@ -16,13 +16,17 @@ public class HtmlToTextActivity extends BaseActivity {
     private com.example.jh.rxhapp.utils.HtmlTextView mLocalhtmlTextView;
 
     @Override
+    public int setMainView() {
+        return R.layout.activity_html_to_text;
+    }
+
+    @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         initView();
     }
 
     private void initView() {
-        addMainView(R.layout.activity_html_to_text);
         mHtmlTextView = (HtmlTextView) findViewById(R.id.html_textview);
         mLocalhtmlTextView = (com.example.jh.rxhapp.utils.HtmlTextView) findViewById(R.id.local_html);
         mHtmlTextView.setHtml(HtmlBody.Html, new HtmlHttpImageGetter(mHtmlTextView));

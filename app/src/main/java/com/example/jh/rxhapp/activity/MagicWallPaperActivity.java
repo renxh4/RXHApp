@@ -15,13 +15,17 @@ public class MagicWallPaperActivity extends BaseActivity {
     private CheckBox mCbVoice;
 
     @Override
+    public int setMainView() {
+        return R.layout.activity_magic_wall_paper;
+    }
+
+    @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         initView();
     }
 
     private void initView() {
-        addMainView(R.layout.activity_magic_wall_paper);
 
         mCbVoice = (CheckBox) findViewById(R.id.id_cb_voice);
 
