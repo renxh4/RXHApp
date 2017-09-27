@@ -10,6 +10,7 @@ import android.support.v7.widget.Toolbar;
 import android.view.View;
 import android.view.Window;
 import android.widget.FrameLayout;
+import android.widget.TextView;
 
 import com.example.jh.rxhapp.R;
 
@@ -19,7 +20,10 @@ public abstract class BaseActivity extends AppCompatActivity {
 
     private FrameLayout mMainView;
     private Toolbar mToolbar;
+    private TextView mTitle;
+
     public abstract int setMainView();
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -42,6 +46,12 @@ public abstract class BaseActivity extends AppCompatActivity {
         mToolbar = (Toolbar) findViewById(R.id.base_toobar);
         mToolbar.setPadding(0, statusBarHeight, 0, 0);
         setSupportActionBar(mToolbar);
+        mTitle = (TextView) findViewById(R.id.toobar_title);
+        mTitle.setText("RXApp");
+    }
+
+    public void setToobarTitle(String title) {
+        mTitle.setText(title);
     }
 
     private void initBaseView() {
@@ -51,14 +61,15 @@ public abstract class BaseActivity extends AppCompatActivity {
     }
 
 
-
     protected void addMainView(View view) {
         mMainView.addView(view);
     }
+
     protected void addMainView(int id) {
         View main = View.inflate(this, id, null);
         mMainView.addView(main);
     }
+
     //获取状态栏的高度
     private int getStatusBarHeight() {
         Class<?> c = null;

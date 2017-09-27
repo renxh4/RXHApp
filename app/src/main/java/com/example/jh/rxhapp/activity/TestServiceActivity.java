@@ -37,6 +37,7 @@ public class TestServiceActivity extends BaseActivity {
     private VelocityTracker obtain;
     private int mPointerId;
     private int mMaxVelocity;
+    private Runnable runnable;
 
     @Override
     public int setMainView() {
@@ -55,24 +56,20 @@ public class TestServiceActivity extends BaseActivity {
         Message msg = new Message();
         msg.what = 1;
         handler.sendMessageDelayed(msg, 1000);
+        runnable = new Runnable() {
+            @Override
+            public void run() {
+                textView.setText("post" + Thread.currentThread());
+            }
+        };
     }
 
     private void newThread() {
         new Thread(new Runnable() {
             @Override
             public void run() {
-                runOnUiThread(new Runnable() {
-                    @Override
-                    public void run() {
-
-                    }
-                });
-                handler.post(new Runnable() {
-                    @Override
-                    public void run() {
-                        textView.setText("post" + Thread.currentThread());
-                    }
-                });
+                Log.d("mmm", Thread.currentThread() + "/");
+                handler.post(runnable);
             }
         }).start();
     }

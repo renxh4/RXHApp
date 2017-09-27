@@ -1,0 +1,30 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical">
+
+    <ImageView
+        android:id="@+id/dialog_image"
+        android:layout_width="match_parent"
+        android:layout_height="100dp"
+        android:src="@drawable/ic_launcher" />
+
+
+    <EditText
+        android:id="@+id/id_txt_your_name"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="username"
+        android:imeOptions="actionDone"
+        android:inputType="text" />
+
+    <EditText
+        android:id="@+id/id_txt_your_pwd"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="pwd"
+        android:imeOptions="actionDone"
+        android:inputType="text" />
+
+
+</LinearLayout>

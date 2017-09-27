@@ -1,23 +1,24 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.example.jh.rxhapp">
+          package="com.example.jh.rxhapp">
 
-    <uses-permission android:name="android.permission.CAMERA" />
-    <uses-permission android:name="android.permission.SET_WALLPAPER" />
-    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
-    <uses-permission android:name="android.permission.CHANGE_WIFI_STATE" />
-    <uses-permission android:name="android.permission.WAKE_LOCK" />
-    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
-    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
-    <uses-permission android:name="android.permission.INTERNET" />
-    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
-    <uses-permission android:name="android.permission.READ_PHONE_STATE" />
-    <uses-permission android:name="android.permission.CALL_PHONE" />
-    <uses-permission android:name="android.permission.READ_LOGS" />
-    <uses-permission android:name="android.permission.RECORD_AUDIO" />
+    <uses-permission android:name="android.permission.CAMERA"/>
+    <uses-permission android:name="android.permission.SET_WALLPAPER"/>
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE"/>
+    <uses-permission android:name="android.permission.CHANGE_WIFI_STATE"/>
+    <uses-permission android:name="android.permission.WAKE_LOCK"/>
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE"/>
+    <uses-permission android:name="android.permission.INTERNET"/>
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"/>
+    <uses-permission android:name="android.permission.READ_PHONE_STATE"/>
+    <uses-permission android:name="android.permission.CALL_PHONE"/>
+    <uses-permission android:name="android.permission.READ_LOGS"/>
+    <uses-permission android:name="android.permission.RECORD_AUDIO"/>
+    <uses-permission android:name="android.permission.SYSTEM_ALERT_WINDOW"/>
 
-    <uses-feature android:name="android.hardware.Camera" />
-    <uses-feature android:name="android.hardware.camera.autofocus" />
+    <uses-feature android:name="android.hardware.Camera"/>
+    <uses-feature android:name="android.hardware.camera.autofocus"/>
 
     <application
         android:name=".BaseApplication"
@@ -28,17 +29,17 @@
         android:theme="@style/AppTheme">
         <activity android:name=".MainActivity">
             <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
+                <action android:name="android.intent.action.MAIN"/>
 
-                <category android:name="android.intent.category.LAUNCHER" />
+                <category android:name="android.intent.category.LAUNCHER"/>
             </intent-filter>
         </activity>
-        <activity android:name=".activity.BaseActivity" />
-        <activity android:name=".activity.ViewPagerActivity" />
-        <activity android:name=".activity.MaterialDesignActivity" />
-        <activity android:name=".activity.CompressBmpActivity" />
-        <activity android:name=".activity.HtmlToTextActivity" />
-        <activity android:name=".activity.CameraLiveWallpaperActivity" />
+        <activity android:name=".activity.BaseActivity"/>
+        <activity android:name=".activity.ViewPagerActivity"/>
+        <activity android:name=".activity.MaterialDesignActivity"/>
+        <activity android:name=".activity.CompressBmpActivity"/>
+        <activity android:name=".activity.HtmlToTextActivity"/>
+        <activity android:name=".activity.CameraLiveWallpaperActivity"/>
         <!-- 配置实时壁纸Service -->
         <service
             android:name=".utils.CameraLiveWallpaper"
@@ -47,15 +48,15 @@
 
             <!-- 为实时壁纸配置intent-filter -->
             <intent-filter>
-                <action android:name="android.service.wallpaper.WallpaperService" />
+                <action android:name="android.service.wallpaper.WallpaperService"/>
             </intent-filter>
             <!-- 为实时壁纸配置meta-data -->
             <meta-data
                 android:name="android.service.wallpaper"
-                android:resource="@xml/livewallpaper" />
+                android:resource="@xml/livewallpaper"/>
         </service>
 
-        <activity android:name=".activity.MagicWallPaperActivity" />
+        <activity android:name=".activity.MagicWallPaperActivity"/>
 
         <!-- 配置实时壁纸Service -->
         <service
@@ -66,29 +67,37 @@
 
             <!-- 为实时壁纸配置intent-filter -->
             <intent-filter>
-                <action android:name="android.service.wallpaper.WallpaperService" />
+                <action android:name="android.service.wallpaper.WallpaperService"/>
             </intent-filter>
             <!-- 为实时壁纸配置meta-data -->
             <meta-data
                 android:name="android.service.wallpaper"
-                android:resource="@xml/livewallpaper" />
+                android:resource="@xml/livewallpaper"/>
         </service>
 
-        <activity android:name=".activity.IPActivity" />
-        <activity android:name=".activity.LiveActivity" />
-        <activity android:name=".activity.PlayLiveActivity" />
+        <activity android:name=".activity.IPActivity"/>
+        <activity android:name=".activity.LiveActivity"/>
+        <activity android:name=".activity.PlayLiveActivity"/>
 
         <service
             android:name=".service.MyService"
             android:enabled="true"
-            android:exported="true" />
+            android:exported="true"/>
         <service
             android:name=".service.MyIntentService"
-            android:exported="false" />
+            android:exported="false"/>
 
-        <activity android:name=".activity.TestServiceActivity" />
-        <activity android:name=".activity.CustomViewActivity" />
-        <activity android:name=".activity.ViewActivity"></activity>
+        <activity android:name=".activity.TestServiceActivity"/>
+        <activity android:name=".activity.CustomViewActivity"/>
+        <activity android:name=".activity.ViewActivity"/>
+        <activity android:name=".activity.ListActivity"/>
+        <activity android:name=".activity.WindowActivity"/>
+        <activity android:name=".activity.ExecutorActivity"/>
+        <activity android:name=".activity.DialogActivity"/>
+        <activity android:name=".activity.PDFActivity">
+        </activity>
+        <activity android:name=".activity.ShowPDFActivity">
+        </activity>
     </application>
 
 </manifest>

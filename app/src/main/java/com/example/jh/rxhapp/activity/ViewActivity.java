@@ -56,5 +56,6 @@ public class ViewActivity extends BaseActivity {
                 animite();
             }
         });
+
     }
 }

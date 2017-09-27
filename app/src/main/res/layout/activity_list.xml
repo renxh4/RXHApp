@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/activity_list"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.example.jh.rxhapp.activity.ListActivity">
+
+
+    <com.example.jh.rxhapp.weight.CustomLin
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <Button
+                android:layout_width="match_parent"
+                android:layout_height="200dp"
+                android:text="hhahahah" />
+
+            <com.example.jh.rxhapp.weight.CustomListView
+                android:id="@+id/custom_recycle"
+                android:layout_width="match_parent"
+                android:layout_height="300dp">
+
+            </com.example.jh.rxhapp.weight.CustomListView>
+
+            <Button
+                android:layout_width="match_parent"
+                android:layout_height="200dp"
+                android:text="hhahahah" />
+
+            <Button
+                android:layout_width="match_parent"
+                android:layout_height="200dp"
+                android:text="hhahahah" />
+
+        </LinearLayout>
+    </com.example.jh.rxhapp.weight.CustomLin>
+</RelativeLayout>

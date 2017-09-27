@@ -23,13 +23,7 @@
             android:text="hahah"
             android:textSize="20sp" />
 
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="50dp"
-            android:background="@color/colorRed"
-            android:orientation="vertical">
 
-        </LinearLayout>
 
         <ImageView
             android:id="@+id/imageView"

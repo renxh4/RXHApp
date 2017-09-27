@@ -55,6 +55,7 @@ public class CustomViewpager extends ViewGroup {
             View childAt = getChildAt(i);
             //测量子布局
             measureChild(childAt, widthMeasureSpec, heightMeasureSpec);
+
         }
 
     }
@@ -149,6 +150,17 @@ public class CustomViewpager extends ViewGroup {
         if (scroller.computeScrollOffset()){
             scrollTo(scroller.getCurrX(),scroller.getCurrY());
             invalidate();
+        }
+    }
+
+    //当view初始化完成后调用
+    @Override
+    public void onWindowFocusChanged(boolean hasWindowFocus) {
+        super.onWindowFocusChanged(hasWindowFocus);
+        if (hasWindowFocus){
+            //获取宽高
+            int measuredWidth = getMeasuredWidth();
+            int measuredHeight = getMeasuredHeight();
         }
     }
 }

@@ -13,15 +13,20 @@ import com.example.jh.rxhapp.R;
 import com.example.jh.rxhapp.activity.CameraLiveWallpaperActivity;
 import com.example.jh.rxhapp.activity.CompressBmpActivity;
 import com.example.jh.rxhapp.activity.CustomViewActivity;
+import com.example.jh.rxhapp.activity.DialogActivity;
+import com.example.jh.rxhapp.activity.ExecutorActivity;
 import com.example.jh.rxhapp.activity.HtmlToTextActivity;
 import com.example.jh.rxhapp.activity.IPActivity;
+import com.example.jh.rxhapp.activity.ListActivity;
 import com.example.jh.rxhapp.activity.LiveActivity;
 import com.example.jh.rxhapp.activity.MagicWallPaperActivity;
 import com.example.jh.rxhapp.activity.MaterialDesignActivity;
+import com.example.jh.rxhapp.activity.PDFActivity;
 import com.example.jh.rxhapp.activity.PlayLiveActivity;
 import com.example.jh.rxhapp.activity.TestServiceActivity;
 import com.example.jh.rxhapp.activity.ViewActivity;
 import com.example.jh.rxhapp.activity.ViewPagerActivity;
+import com.example.jh.rxhapp.activity.WindowActivity;
 
 import java.util.ArrayList;
 
@@ -52,6 +57,17 @@ public class MainRecycleAdapter extends RecyclerView.Adapter {
         mList.add("handler使用");
         mList.add("自定义view");
         mList.add("view的移动");
+        mList.add("滑动事件的分发");
+        mList.add("window开发");
+        mList.add("线程池开发");
+        mList.add("DialogFragment对话框");
+        mList.add("显示pdf，word文件");
+
+
+
+        mList.add("蓝牙开发");
+
+
     }
 
     @Override
@@ -109,6 +125,16 @@ public class MainRecycleAdapter extends RecyclerView.Adapter {
                         mContext.startActivity(new Intent(mContext, CustomViewActivity.class));
                     } else if (getAdapterPosition() == 10) {
                         mContext.startActivity(new Intent(mContext, ViewActivity.class));
+                    } else if (getAdapterPosition() == 11) {
+                        mContext.startActivity(new Intent(mContext, ListActivity.class));
+                    }else if (getAdapterPosition() == 12) {
+                        mContext.startActivity(new Intent(mContext, WindowActivity.class));
+                    }else if (getAdapterPosition() == 13) {
+                        mContext.startActivity(new Intent(mContext, ExecutorActivity.class));
+                    }else if (getAdapterPosition() == 14) {
+                        mContext.startActivity(new Intent(mContext, DialogActivity.class));
+                    }else if (getAdapterPosition() == 15) {
+                        mContext.startActivity(new Intent(mContext, PDFActivity.class));
                     }
                     break;
             }
