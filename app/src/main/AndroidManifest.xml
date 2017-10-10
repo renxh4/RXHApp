@@ -98,6 +98,10 @@
         </activity>
         <activity android:name=".activity.ShowPDFActivity">
         </activity>
+        <activity android:name=".activity.ThreadLocalActivity">
+        </activity>
+        <activity android:name=".activity.JNIActivity">
+        </activity>
     </application>
 
 </manifest>

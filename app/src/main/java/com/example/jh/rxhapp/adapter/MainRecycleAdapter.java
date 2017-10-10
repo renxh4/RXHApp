@@ -17,6 +17,7 @@ import com.example.jh.rxhapp.activity.DialogActivity;
 import com.example.jh.rxhapp.activity.ExecutorActivity;
 import com.example.jh.rxhapp.activity.HtmlToTextActivity;
 import com.example.jh.rxhapp.activity.IPActivity;
+import com.example.jh.rxhapp.activity.JNIActivity;
 import com.example.jh.rxhapp.activity.ListActivity;
 import com.example.jh.rxhapp.activity.LiveActivity;
 import com.example.jh.rxhapp.activity.MagicWallPaperActivity;
@@ -24,6 +25,7 @@ import com.example.jh.rxhapp.activity.MaterialDesignActivity;
 import com.example.jh.rxhapp.activity.PDFActivity;
 import com.example.jh.rxhapp.activity.PlayLiveActivity;
 import com.example.jh.rxhapp.activity.TestServiceActivity;
+import com.example.jh.rxhapp.activity.ThreadLocalActivity;
 import com.example.jh.rxhapp.activity.ViewActivity;
 import com.example.jh.rxhapp.activity.ViewPagerActivity;
 import com.example.jh.rxhapp.activity.WindowActivity;
@@ -62,7 +64,8 @@ public class MainRecycleAdapter extends RecyclerView.Adapter {
         mList.add("线程池开发");
         mList.add("DialogFragment对话框");
         mList.add("显示pdf，word文件");
-
+        mList.add("ThreadLocal的使用");
+        mList.add("JNI开发");
 
 
         mList.add("蓝牙开发");
@@ -127,14 +130,18 @@ public class MainRecycleAdapter extends RecyclerView.Adapter {
                         mContext.startActivity(new Intent(mContext, ViewActivity.class));
                     } else if (getAdapterPosition() == 11) {
                         mContext.startActivity(new Intent(mContext, ListActivity.class));
-                    }else if (getAdapterPosition() == 12) {
+                    } else if (getAdapterPosition() == 12) {
                         mContext.startActivity(new Intent(mContext, WindowActivity.class));
-                    }else if (getAdapterPosition() == 13) {
+                    } else if (getAdapterPosition() == 13) {
                         mContext.startActivity(new Intent(mContext, ExecutorActivity.class));
-                    }else if (getAdapterPosition() == 14) {
+                    } else if (getAdapterPosition() == 14) {
                         mContext.startActivity(new Intent(mContext, DialogActivity.class));
-                    }else if (getAdapterPosition() == 15) {
+                    } else if (getAdapterPosition() == 15) {
                         mContext.startActivity(new Intent(mContext, PDFActivity.class));
+                    } else if (getAdapterPosition() == 16) {
+                        mContext.startActivity(new Intent(mContext, ThreadLocalActivity.class));
+                    } else if (getAdapterPosition() == 17) {
+                        mContext.startActivity(new Intent(mContext, JNIActivity.class));
                     }
                     break;
             }
