@@ -2,6 +2,8 @@ package com.example.jh.rxhapp.activity;
 
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.view.View;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.example.jh.rxhapp.R;
@@ -20,5 +22,7 @@ public class JNIActivity extends BaseActivity {
         super.onCreate(savedInstanceState);
         setToobarTitle("JNI");
         ToastUtils.showToast(this, NDKHelper.GetStringFromC("欢迎来到PalmRead"));
+        TextView textView = (TextView) findViewById(R.id.jni_textview);
+        textView.setText(NDKHelper.GetStringFromC("欢迎来到PalmRead"));
     }
 }

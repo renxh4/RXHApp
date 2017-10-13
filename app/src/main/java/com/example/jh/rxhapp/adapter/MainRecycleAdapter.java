@@ -10,6 +10,7 @@ import android.view.textservice.TextServicesManager;
 import android.widget.Button;
 
 import com.example.jh.rxhapp.R;
+import com.example.jh.rxhapp.activity.BuildActivity;
 import com.example.jh.rxhapp.activity.CameraLiveWallpaperActivity;
 import com.example.jh.rxhapp.activity.CompressBmpActivity;
 import com.example.jh.rxhapp.activity.CustomViewActivity;
@@ -17,6 +18,7 @@ import com.example.jh.rxhapp.activity.DialogActivity;
 import com.example.jh.rxhapp.activity.ExecutorActivity;
 import com.example.jh.rxhapp.activity.HtmlToTextActivity;
 import com.example.jh.rxhapp.activity.IPActivity;
+import com.example.jh.rxhapp.activity.InstanstActivity;
 import com.example.jh.rxhapp.activity.JNIActivity;
 import com.example.jh.rxhapp.activity.ListActivity;
 import com.example.jh.rxhapp.activity.LiveActivity;
@@ -66,6 +68,8 @@ public class MainRecycleAdapter extends RecyclerView.Adapter {
         mList.add("显示pdf，word文件");
         mList.add("ThreadLocal的使用");
         mList.add("JNI开发");
+        mList.add("单例模式");
+        mList.add("Build 模式");
 
 
         mList.add("蓝牙开发");
@@ -142,6 +146,10 @@ public class MainRecycleAdapter extends RecyclerView.Adapter {
                         mContext.startActivity(new Intent(mContext, ThreadLocalActivity.class));
                     } else if (getAdapterPosition() == 17) {
                         mContext.startActivity(new Intent(mContext, JNIActivity.class));
+                    } else if (getAdapterPosition() == 18) {
+                        mContext.startActivity(new Intent(mContext, InstanstActivity.class));
+                    }else if (getAdapterPosition() == 19) {
+                        mContext.startActivity(new Intent(mContext, BuildActivity.class));
                     }
                     break;
             }

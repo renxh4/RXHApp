@@ -102,6 +102,10 @@
         </activity>
         <activity android:name=".activity.JNIActivity">
         </activity>
+        <activity android:name=".activity.InstanstActivity">
+        </activity>
+        <activity android:name=".activity.BuildActivity">
+        </activity>
     </application>
 
 </manifest>
