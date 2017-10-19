@@ -109,8 +109,10 @@ public class TestServiceActivity extends BaseActivity {
                         final float velocityY = obtain.getYVelocity(mPointerId);
                         textView1.setText("速度x" + velocityX + "速度y" + velocityY);
                         break;
+                    default:
 
                 }
+
                 return false;
             }
         });

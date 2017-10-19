@@ -25,7 +25,7 @@ public class MainActivity extends BaseActivity implements View.OnClickListener {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         initView();
-        initSdk();
+       // initSdk();
     }
 
     private void initSdk() {

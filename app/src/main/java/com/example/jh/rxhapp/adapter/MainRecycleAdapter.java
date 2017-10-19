@@ -10,12 +10,14 @@ import android.view.textservice.TextServicesManager;
 import android.widget.Button;
 
 import com.example.jh.rxhapp.R;
+import com.example.jh.rxhapp.activity.AbFactoryActivity;
 import com.example.jh.rxhapp.activity.BuildActivity;
 import com.example.jh.rxhapp.activity.CameraLiveWallpaperActivity;
 import com.example.jh.rxhapp.activity.CompressBmpActivity;
 import com.example.jh.rxhapp.activity.CustomViewActivity;
 import com.example.jh.rxhapp.activity.DialogActivity;
 import com.example.jh.rxhapp.activity.ExecutorActivity;
+import com.example.jh.rxhapp.activity.FactoryActivity;
 import com.example.jh.rxhapp.activity.HtmlToTextActivity;
 import com.example.jh.rxhapp.activity.IPActivity;
 import com.example.jh.rxhapp.activity.InstanstActivity;
@@ -24,6 +26,7 @@ import com.example.jh.rxhapp.activity.ListActivity;
 import com.example.jh.rxhapp.activity.LiveActivity;
 import com.example.jh.rxhapp.activity.MagicWallPaperActivity;
 import com.example.jh.rxhapp.activity.MaterialDesignActivity;
+import com.example.jh.rxhapp.activity.ObserverActivity;
 import com.example.jh.rxhapp.activity.PDFActivity;
 import com.example.jh.rxhapp.activity.PlayLiveActivity;
 import com.example.jh.rxhapp.activity.TestServiceActivity;
@@ -31,6 +34,7 @@ import com.example.jh.rxhapp.activity.ThreadLocalActivity;
 import com.example.jh.rxhapp.activity.ViewActivity;
 import com.example.jh.rxhapp.activity.ViewPagerActivity;
 import com.example.jh.rxhapp.activity.WindowActivity;
+import com.example.jh.rxhapp.observer.Observer;
 
 import java.util.ArrayList;
 
@@ -70,6 +74,9 @@ public class MainRecycleAdapter extends RecyclerView.Adapter {
         mList.add("JNI开发");
         mList.add("单例模式");
         mList.add("Build 模式");
+        mList.add("工厂方法模式");
+        mList.add("抽象工厂模式");
+        mList.add("观察者模式");
 
 
         mList.add("蓝牙开发");
@@ -150,8 +157,18 @@ public class MainRecycleAdapter extends RecyclerView.Adapter {
                         mContext.startActivity(new Intent(mContext, InstanstActivity.class));
                     }else if (getAdapterPosition() == 19) {
                         mContext.startActivity(new Intent(mContext, BuildActivity.class));
+                    }else if (getAdapterPosition() == 20) {
+                        mContext.startActivity(new Intent(mContext, FactoryActivity.class));
+                    }else if (getAdapterPosition() == 21) {
+                        mContext.startActivity(new Intent(mContext, AbFactoryActivity.class));
+                    }else if (getAdapterPosition() == 22) {
+                        mContext.startActivity(new Intent(mContext, ObserverActivity.class));
                     }
                     break;
+                default:
+
+                    break;
+
             }
         }
     }
