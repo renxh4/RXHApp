@@ -6,7 +6,7 @@ import android.util.Log;
  * Created by xiaohui on 2017/10/17.
  */
 
-//集体观察者
+//具体观察者
 public class StudentObserver implements Observer {
 
     private final Subject mSubject;

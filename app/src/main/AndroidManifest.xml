@@ -112,6 +112,10 @@
         </activity>
         <activity android:name=".activity.ObserverActivity">
         </activity>
+        <activity android:name=".activity.ViewPager1Activity">
+        </activity>
+        <activity android:name=".activity.GestureActivity">
+        </activity>
     </application>
 
 </manifest>

@@ -18,6 +18,7 @@ import com.example.jh.rxhapp.activity.CustomViewActivity;
 import com.example.jh.rxhapp.activity.DialogActivity;
 import com.example.jh.rxhapp.activity.ExecutorActivity;
 import com.example.jh.rxhapp.activity.FactoryActivity;
+import com.example.jh.rxhapp.activity.GestureActivity;
 import com.example.jh.rxhapp.activity.HtmlToTextActivity;
 import com.example.jh.rxhapp.activity.IPActivity;
 import com.example.jh.rxhapp.activity.InstanstActivity;
@@ -32,6 +33,7 @@ import com.example.jh.rxhapp.activity.PlayLiveActivity;
 import com.example.jh.rxhapp.activity.TestServiceActivity;
 import com.example.jh.rxhapp.activity.ThreadLocalActivity;
 import com.example.jh.rxhapp.activity.ViewActivity;
+import com.example.jh.rxhapp.activity.ViewPager1Activity;
 import com.example.jh.rxhapp.activity.ViewPagerActivity;
 import com.example.jh.rxhapp.activity.WindowActivity;
 import com.example.jh.rxhapp.observer.Observer;
@@ -77,7 +79,8 @@ public class MainRecycleAdapter extends RecyclerView.Adapter {
         mList.add("工厂方法模式");
         mList.add("抽象工厂模式");
         mList.add("观察者模式");
-
+        mList.add("无限轮播的viewpager");
+        mList.add("手势解锁");
 
         mList.add("蓝牙开发");
 
@@ -163,6 +166,10 @@ public class MainRecycleAdapter extends RecyclerView.Adapter {
                         mContext.startActivity(new Intent(mContext, AbFactoryActivity.class));
                     }else if (getAdapterPosition() == 22) {
                         mContext.startActivity(new Intent(mContext, ObserverActivity.class));
+                    }else if (getAdapterPosition() == 23) {
+                        mContext.startActivity(new Intent(mContext, ViewPager1Activity.class));
+                    }else if (getAdapterPosition() == 24) {
+                        mContext.startActivity(new Intent(mContext, GestureActivity.class));
                     }
                     break;
                 default:
