@@ -3,6 +3,7 @@ package com.example.jh.rxhapp;
 import android.app.Application;
 
 import com.example.jh.rxhapp.utils.GlideImageLoader;
+import com.mob.MobApplication;
 
 import cn.finalteam.galleryfinal.CoreConfig;
 import cn.finalteam.galleryfinal.FunctionConfig;

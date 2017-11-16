@@ -16,6 +16,11 @@
     <uses-permission android:name="android.permission.READ_LOGS"/>
     <uses-permission android:name="android.permission.RECORD_AUDIO"/>
     <uses-permission android:name="android.permission.SYSTEM_ALERT_WINDOW"/>
+    <uses-permission android:name="android.permission.READ_CONTACTS"/>
+    <uses-permission android:name="android.permission.RECEIVE_SMS"/>
+    <uses-permission android:name="android.permission.READ_SMS"/>
+    <uses-permission android:name="android.permission.GET_TASKS"/>
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION"/>
 
     <uses-feature android:name="android.hardware.Camera"/>
     <uses-feature android:name="android.hardware.camera.autofocus"/>
@@ -34,6 +39,11 @@
                 <category android:name="android.intent.category.LAUNCHER"/>
             </intent-filter>
         </activity>
+        <activity
+            android:name="com.mob.tools.MobUIShell"
+            android:configChanges="keyboardHidden|orientation|screenSize"
+            android:theme="@android:style/Theme.Translucent.NoTitleBar"
+            android:windowSoftInputMode="stateHidden|adjustResize"/>
         <activity android:name=".activity.BaseActivity"/>
         <activity android:name=".activity.ViewPagerActivity"/>
         <activity android:name=".activity.MaterialDesignActivity"/>
@@ -115,6 +125,21 @@
         <activity android:name=".activity.ViewPager1Activity">
         </activity>
         <activity android:name=".activity.GestureActivity">
+        </activity>
+
+        <!-- 通过AndroidManifest配置AppKey和AppSecret，如果你选择通过代码配置，则不需要配置以下meta-data -->
+        <!--
+        <meta-data
+            android:name="Mob-AppKey"
+            android:value="2247b4b4844c0"/>
+        <meta-data
+            android:name="Mob-AppSecret"
+            android:value="f10e6fb1b4f12baeb401a56d825f3ddd"/>
+        -->
+
+        <activity android:name=".activity.SmsActivity">
+        </activity>
+        <activity android:name=".activity.RefreshActivity">
         </activity>
     </application>
 

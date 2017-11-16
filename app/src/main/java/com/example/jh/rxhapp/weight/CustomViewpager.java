@@ -98,6 +98,7 @@ public class CustomViewpager extends ViewGroup {
                 break;
             case MotionEvent.ACTION_UP:
                 break;
+            default:
 
         }
         return super.onInterceptTouchEvent(ev);
@@ -139,6 +140,7 @@ public class CustomViewpager extends ViewGroup {
                 Log.d("mmm1",getScrollX()+"dx"+dx);
                 invalidate();
                 break;
+            default:
 
         }
         return super.onTouchEvent(event);

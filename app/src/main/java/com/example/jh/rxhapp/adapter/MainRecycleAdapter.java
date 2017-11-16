@@ -30,6 +30,8 @@ import com.example.jh.rxhapp.activity.MaterialDesignActivity;
 import com.example.jh.rxhapp.activity.ObserverActivity;
 import com.example.jh.rxhapp.activity.PDFActivity;
 import com.example.jh.rxhapp.activity.PlayLiveActivity;
+import com.example.jh.rxhapp.activity.RefreshActivity;
+import com.example.jh.rxhapp.activity.SmsActivity;
 import com.example.jh.rxhapp.activity.TestServiceActivity;
 import com.example.jh.rxhapp.activity.ThreadLocalActivity;
 import com.example.jh.rxhapp.activity.ViewActivity;
@@ -37,6 +39,7 @@ import com.example.jh.rxhapp.activity.ViewPager1Activity;
 import com.example.jh.rxhapp.activity.ViewPagerActivity;
 import com.example.jh.rxhapp.activity.WindowActivity;
 import com.example.jh.rxhapp.observer.Observer;
+import com.mob.tools.MobUIShell;
 
 import java.util.ArrayList;
 
@@ -81,6 +84,8 @@ public class MainRecycleAdapter extends RecyclerView.Adapter {
         mList.add("观察者模式");
         mList.add("无限轮播的viewpager");
         mList.add("手势解锁");
+        mList.add("短信验证");
+        mList.add("万能下拉刷新");
 
         mList.add("蓝牙开发");
 
@@ -170,6 +175,10 @@ public class MainRecycleAdapter extends RecyclerView.Adapter {
                         mContext.startActivity(new Intent(mContext, ViewPager1Activity.class));
                     }else if (getAdapterPosition() == 24) {
                         mContext.startActivity(new Intent(mContext, GestureActivity.class));
+                    }else if (getAdapterPosition() == 25) {
+                        mContext.startActivity(new Intent(mContext, SmsActivity.class));
+                    }else if (getAdapterPosition() == 26) {
+                        mContext.startActivity(new Intent(mContext, RefreshActivity.class));
                     }
                     break;
                 default:
