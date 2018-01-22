@@ -53,6 +53,7 @@ public class CustomButton extends Button {
             case MotionEvent.ACTION_UP:
 
                 break;
+            default:
         }
         return true;
     }

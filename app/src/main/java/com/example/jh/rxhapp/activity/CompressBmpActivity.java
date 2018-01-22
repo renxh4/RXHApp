@@ -30,6 +30,7 @@ import com.example.jh.rxhapp.utils.CompressBmpToFile;
 
 import java.io.File;
 import java.io.IOException;
+import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 
@@ -63,6 +64,7 @@ public class CompressBmpActivity extends BaseActivity implements View.OnClickLis
             ActivityCompat.requestPermissions(this, new String[]{Manifest.permission.WRITE_EXTERNAL_STORAGE}, 100);
         }
 
+
     }
 
     private void initView() {
@@ -72,6 +74,8 @@ public class CompressBmpActivity extends BaseActivity implements View.OnClickLis
         mYuantuText = (TextView) findViewById(R.id.compress_yuantu_text);
         mYasuoText = (TextView) findViewById(R.id.compress_yasuo_text);
         mButton.setOnClickListener(this);
+        int measuredHeight = mButton.getMeasuredHeight();
+        int width = mButton.getWidth();
 
     }
 
@@ -83,6 +87,7 @@ public class CompressBmpActivity extends BaseActivity implements View.OnClickLis
                 // GalleryFinal.openGallerySingle(REQUEST_CODE_GALLERY, new Myhander());
                 showPickPhotoDialog();
                 break;
+            default:
         }
     }
 
@@ -105,6 +110,7 @@ public class CompressBmpActivity extends BaseActivity implements View.OnClickLis
                     case 1:
                         GalleryFinal.openGallerySingle(REQUEST_CODE_GALLERY, new Myhander());
                         break;
+                    default:
                 }
                 dialog.dismiss();
             }

@@ -32,6 +32,7 @@ import com.example.jh.rxhapp.activity.PDFActivity;
 import com.example.jh.rxhapp.activity.PlayLiveActivity;
 import com.example.jh.rxhapp.activity.RefreshActivity;
 import com.example.jh.rxhapp.activity.SmsActivity;
+import com.example.jh.rxhapp.activity.SortActivity;
 import com.example.jh.rxhapp.activity.TestServiceActivity;
 import com.example.jh.rxhapp.activity.ThreadLocalActivity;
 import com.example.jh.rxhapp.activity.ViewActivity;
@@ -86,6 +87,7 @@ public class MainRecycleAdapter extends RecyclerView.Adapter {
         mList.add("手势解锁");
         mList.add("短信验证");
         mList.add("万能下拉刷新");
+        mList.add("基本算法");
 
         mList.add("蓝牙开发");
 
@@ -179,6 +181,8 @@ public class MainRecycleAdapter extends RecyclerView.Adapter {
                         mContext.startActivity(new Intent(mContext, SmsActivity.class));
                     }else if (getAdapterPosition() == 26) {
                         mContext.startActivity(new Intent(mContext, RefreshActivity.class));
+                    }else if (getAdapterPosition() == 27) {
+                        mContext.startActivity(new Intent(mContext, SortActivity.class));
                     }
                     break;
                 default:

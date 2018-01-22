@@ -141,6 +141,8 @@
         </activity>
         <activity android:name=".activity.RefreshActivity">
         </activity>
+        <activity android:name=".activity.SortActivity">
+        </activity>
     </application>
 
 </manifest>
