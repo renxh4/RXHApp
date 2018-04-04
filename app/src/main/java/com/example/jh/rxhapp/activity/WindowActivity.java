@@ -74,4 +74,8 @@ public class WindowActivity extends BaseActivity {
         windowManager.addView(button, layoutParams);
     }
 
+    @Override
+    protected void onResume() {
+        super.onResume();
+    }
 }

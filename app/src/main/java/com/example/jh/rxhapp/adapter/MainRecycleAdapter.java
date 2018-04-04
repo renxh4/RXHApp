@@ -18,8 +18,10 @@ import com.example.jh.rxhapp.activity.CustomViewActivity;
 import com.example.jh.rxhapp.activity.DialogActivity;
 import com.example.jh.rxhapp.activity.ExecutorActivity;
 import com.example.jh.rxhapp.activity.FactoryActivity;
+import com.example.jh.rxhapp.activity.FansheActivity;
 import com.example.jh.rxhapp.activity.GestureActivity;
 import com.example.jh.rxhapp.activity.HtmlToTextActivity;
+import com.example.jh.rxhapp.activity.IOActivity;
 import com.example.jh.rxhapp.activity.IPActivity;
 import com.example.jh.rxhapp.activity.InstanstActivity;
 import com.example.jh.rxhapp.activity.JNIActivity;
@@ -36,6 +38,7 @@ import com.example.jh.rxhapp.activity.SortActivity;
 import com.example.jh.rxhapp.activity.TestServiceActivity;
 import com.example.jh.rxhapp.activity.ThreadLocalActivity;
 import com.example.jh.rxhapp.activity.ViewActivity;
+import com.example.jh.rxhapp.activity.ViewFlipperActivity;
 import com.example.jh.rxhapp.activity.ViewPager1Activity;
 import com.example.jh.rxhapp.activity.ViewPagerActivity;
 import com.example.jh.rxhapp.activity.WindowActivity;
@@ -88,8 +91,11 @@ public class MainRecycleAdapter extends RecyclerView.Adapter {
         mList.add("短信验证");
         mList.add("万能下拉刷新");
         mList.add("基本算法");
+        mList.add("IO流");
+        mList.add("反射");
+        mList.add("仿淘宝滚动条");
 
-        mList.add("蓝牙开发");
+        mList.add("喜欢的点个star");
 
 
     }
@@ -183,6 +189,12 @@ public class MainRecycleAdapter extends RecyclerView.Adapter {
                         mContext.startActivity(new Intent(mContext, RefreshActivity.class));
                     }else if (getAdapterPosition() == 27) {
                         mContext.startActivity(new Intent(mContext, SortActivity.class));
+                    }else if (getAdapterPosition() == 28) {
+                        mContext.startActivity(new Intent(mContext, IOActivity.class));
+                    }else if (getAdapterPosition() == 29) {
+                        mContext.startActivity(new Intent(mContext, FansheActivity.class));
+                    }else if (getAdapterPosition() == 30) {
+                        mContext.startActivity(new Intent(mContext, ViewFlipperActivity.class));
                     }
                     break;
                 default:

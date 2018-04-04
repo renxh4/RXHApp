@@ -2,6 +2,7 @@ package com.example.jh.rxhapp;
 
 import android.app.Application;
 
+import com.example.jh.rxhapp.utils.CrashHandler;
 import com.example.jh.rxhapp.utils.GlideImageLoader;
 import com.mob.MobApplication;
 
@@ -33,6 +34,8 @@ public class BaseApplication extends Application {
         super.onCreate();
         //这里可以全局初始化配置
         initGalleryFinal();
+        CrashHandler instance = CrashHandler.getInstance();
+        instance.init(this);
     }
 
     private void initGalleryFinal() {

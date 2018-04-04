@@ -143,6 +143,16 @@
         </activity>
         <activity android:name=".activity.SortActivity">
         </activity>
+        <activity android:name=".activity.SocketActivity">
+        </activity>
+        <activity android:name=".activity.IOActivity">
+        </activity>
+        <activity android:name=".activity.FansheActivity">
+        </activity>
+        <activity android:name=".activity.CActivity">
+        </activity>
+        <activity android:name=".activity.ViewFlipperActivity">
+        </activity>
     </application>
 
 </manifest>

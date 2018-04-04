@@ -8,7 +8,8 @@ import com.example.jh.rxhapp.R;
 
 public class SortActivity extends BaseActivity {
 
-    private volatile boolean isRunning=true;
+    private volatile boolean isRunning = true;
+    private Object mLowArr;
 
     @Override
     public int setMainView() {
@@ -20,30 +21,33 @@ public class SortActivity extends BaseActivity {
         super.onCreate(savedInstanceState);
         setToobarTitle("基本算法");
         //二分查找
-        int i = sort1(1);
-        Log.d("mmm二分查找", "你查找的索引=" + i);
+        //int i = sort1(1);
+        //Log.d("mmm二分查找", "你查找的索引=" + i);
         //冒泡排序
-        int[] arr = {16, 17, 2, 43, 233, 47};
+        int[] arr = {16, 17, 2, 43, 233, 47, 5, 12, 8, 54};
         //sort2(arr);
         //选择排序
-        sort3(arr);
-        textThread();
+        //sort3(arr);
+        sort5(arr, 0, arr.length - 1);
+        //quickSort(arr,0,arr.length-1);
+        sort4(arr);
+
     }
 
-    private void textThread() {
-        new Thread(new Runnable() {
-            @Override
-            public void run() {
-                while (isRunning) {
-                    Log.d("mmmsortthread", "1");
-                }
-            }
-        }).start();
-    }
 
     /**
      * 二分查找
-     *
+     * ① 首先确定整个查找区间的中间位置 mid = （ left + right ）/ 2
+
+     ② 用待查关键字值与中间位置的关键字值进行比较；
+
+     若相等，则查找成功
+
+     若大于，则在后（右）半个区域继续进行折半查找
+
+     若小于，则在前（左）半个区域继续进行折半查找
+
+     ③ 对确定的缩小区域再按折半公式，重复上述步骤。
      * @param i 查找的数字
      */
     private int sort1(int i) {
@@ -70,7 +74,6 @@ public class SortActivity extends BaseActivity {
     /**
      * 冒泡排序
      * 相邻元素两两比较，大的往后放，第一次完毕后，最大值出现最后面
-     *
      * @param arr
      */
     private void sort2(int[] arr) {
@@ -107,6 +110,55 @@ public class SortActivity extends BaseActivity {
         sort4(arr);
     }
 
+    /**
+     * 快速排序
+     *
+     * @param arr
+     */
+    private void sort5(int[] arr, int low, int high) {
+        int i, j, temp, t;
+        if (low >= high) {
+            return;
+        }
+        i = low;
+        j = high;
+        //temp就是基准位
+        temp = arr[low];
+        while (i < j) {
+            //先看右边依次递减
+            while (arr[j] >= temp && i < j) {
+                j--;
+            }
+
+            //再看左边依次递增
+
+            while (arr[i] <= temp && i < j) {
+                i++;
+            }
+
+            //如果满足条件交换数字
+
+            if (i < j) {
+                t = arr[j];
+                arr[j] = arr[i];
+                arr[i] = t;
+            }
+
+        }
+        //最后将基准与i和j相等的位置的数字交换交换
+
+        arr[low] = arr[i];
+        arr[i] = temp;
+
+        //现在左半边都是小于基准值的，递归调用左半边
+
+        sort5(arr, low, i - 1);
+
+        //现在右半边都是大于基准值的，递归调用右半边
+
+        sort5(arr, i + 1, high);
+    }
+
 
     /**
      * 打印数组
@@ -119,9 +171,10 @@ public class SortActivity extends BaseActivity {
         }
     }
 
+
     @Override
     protected void onDestroy() {
         super.onDestroy();
-        isRunning=false;
+        isRunning = false;
     }
 }

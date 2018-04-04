@@ -36,7 +36,6 @@ public abstract class BaseActivity extends AppCompatActivity {
         SoftReference<Object> softReference = new SoftReference<Object>(o);
         //如果设置 o=null，如果软引用没有被回收依然可以通过获取object对象
         Object o1 = softReference.get();
-
     }
 
     //浸入式状态栏
@@ -106,6 +105,8 @@ public abstract class BaseActivity extends AppCompatActivity {
 
         return sbar;
     }
+
+
 
 
 }
