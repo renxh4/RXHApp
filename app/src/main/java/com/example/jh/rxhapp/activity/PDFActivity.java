@@ -1,11 +1,13 @@
 package com.example.jh.rxhapp.activity;
 
+import android.os.Environment;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.Toast;
 
+import com.example.jh.rxhapp.Constants;
 import com.example.jh.rxhapp.R;
 
 import java.util.ArrayList;
@@ -45,7 +47,7 @@ public class PDFActivity extends BaseActivity implements View.OnClickListener {
         mPath = new ArrayList<>();
         mPath.add("/storage/emulated/0/test.docx");
         mPath.add("/storage/emulated/0/test.txt");
-        mPath.add("/storage/emulated/0/test.xlsx");
+        mPath.add(Environment.getExternalStorageDirectory() + "/hui/"+"text2.xls");
         mPath.add("/storage/emulated/0/test.pptx");
         mPath.add("/storage/emulated/0/test.pdf");
     }
@@ -72,6 +74,7 @@ public class PDFActivity extends BaseActivity implements View.OnClickListener {
                 ShowPDFActivity.show(this, mPath.get(4));
                 Toast.makeText(this, "pdf", Toast.LENGTH_SHORT).show();
                 break;
+            default:
 
         }
 

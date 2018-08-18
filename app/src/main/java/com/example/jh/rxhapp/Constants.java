@@ -11,4 +11,6 @@ public interface Constants {
     String SD_CARD_DIR = Environment.getExternalStorageDirectory() + "/";
     String FILE_DIR = SD_CARD_DIR + "ren/xh";
     String IMAGE = FILE_DIR + "/image/";
+    String EXCEL = FILE_DIR+"/excel/";
+
 }

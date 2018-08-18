@@ -45,7 +45,9 @@
             android:theme="@android:style/Theme.Translucent.NoTitleBar"
             android:windowSoftInputMode="stateHidden|adjustResize"/>
         <activity android:name=".activity.BaseActivity"/>
-        <activity android:name=".activity.ViewPagerActivity"/>
+        <activity
+            android:name=".activity.ViewPagerActivity"
+            android:launchMode="singleTask"/>
         <activity android:name=".activity.MaterialDesignActivity"/>
         <activity android:name=".activity.CompressBmpActivity"/>
         <activity android:name=".activity.HtmlToTextActivity"/>
@@ -152,6 +154,22 @@
         <activity android:name=".activity.CActivity">
         </activity>
         <activity android:name=".activity.ViewFlipperActivity">
+        </activity>
+        <activity android:name=".activity.BluetoothActivity">
+        </activity>
+        <activity android:name=".activity.BigImageActivity">
+        </activity>
+        <activity android:name=".activity.DonghuaActivity">
+        </activity>
+        <activity android:name=".activity.DuoXianChengActivity">
+        </activity>
+        <activity android:name=".mvp1.MVP1Activity">
+        </activity>
+        <activity android:name=".mvp2.v.Base1Activity">
+        </activity>
+        <activity android:name=".mvp2.v.Mvp2Activity">
+        </activity>
+        <activity android:name=".activity.ProxyActivity">
         </activity>
     </application>
 

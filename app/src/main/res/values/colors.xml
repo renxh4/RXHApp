@@ -28,5 +28,7 @@
     <color name="white">#ffffff</color>
     <color name="no_color">#00000000</color>
     <color name="colorMenuDivide">#80808080</color>
+
     <color name="guideBg">#333333</color>
+
 </resources>

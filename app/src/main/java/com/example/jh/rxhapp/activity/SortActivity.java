@@ -38,16 +38,18 @@ public class SortActivity extends BaseActivity {
     /**
      * 二分查找
      * ① 首先确定整个查找区间的中间位置 mid = （ left + right ）/ 2
-
-     ② 用待查关键字值与中间位置的关键字值进行比较；
-
-     若相等，则查找成功
-
-     若大于，则在后（右）半个区域继续进行折半查找
-
-     若小于，则在前（左）半个区域继续进行折半查找
-
-     ③ 对确定的缩小区域再按折半公式，重复上述步骤。
+     * <p>
+     * ② 用待查关键字值与中间位置的关键字值进行比较；
+     * <p>
+     * 若相等，则查找成功
+     * <p>
+     * 若大于，则在后（右）半个区域继续进行折半查找
+     * <p>
+     * 若小于，则在前（左）半个区域继续进行折半查找
+     * <p>
+     * ③ 对确定的缩小区域再按折半公式，重复上述步骤。
+     * 时间复杂度  O(logn)
+     *
      * @param i 查找的数字
      */
     private int sort1(int i) {
@@ -74,6 +76,7 @@ public class SortActivity extends BaseActivity {
     /**
      * 冒泡排序
      * 相邻元素两两比较，大的往后放，第一次完毕后，最大值出现最后面
+     *
      * @param arr
      */
     private void sort2(int[] arr) {
@@ -93,6 +96,7 @@ public class SortActivity extends BaseActivity {
     /**
      * 选择排序
      * 第一次用第一个数依次跟后面所有数比较，小的放前面，，第一次循环之后，小的在最前面
+     * 时间复杂度 O(n2) n的平方
      *
      * @param arr
      */
@@ -112,6 +116,7 @@ public class SortActivity extends BaseActivity {
 
     /**
      * 快速排序
+     * 时间复杂度 O(nlogn)
      *
      * @param arr
      */
@@ -168,6 +173,31 @@ public class SortActivity extends BaseActivity {
     private void sort4(int[] arr) {
         for (int i = 0; i < arr.length; i++) {
             Log.d("mmm打印数组", "索引=" + i + "值=" + arr[i]);
+        }
+    }
+
+    /**
+     * 判断传进来的是否是回文
+     *
+     * @param str1
+     * @param str2
+     */
+    public void isHuiWen(String str1, String str2) {
+
+        StringBuffer sb = new StringBuffer(str2);
+        sb.reverse();// 将str2中的字符串倒置
+
+        int count = 0;
+        for (int i = 0; i < str1.length(); i++) {
+            if (str1.charAt(i) == sb.charAt(i)) {
+                count++;
+            }
+        }
+        if (count == str1.length()) {
+
+            System.out.println("此字符串是一个回文字符串");
+        } else {
+            System.out.println("此字符串不是一个回文字符串");
         }
     }
 

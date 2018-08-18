@@ -11,11 +11,15 @@ import android.widget.Button;
 
 import com.example.jh.rxhapp.R;
 import com.example.jh.rxhapp.activity.AbFactoryActivity;
+import com.example.jh.rxhapp.activity.BigImageActivity;
+import com.example.jh.rxhapp.activity.BluetoothActivity;
 import com.example.jh.rxhapp.activity.BuildActivity;
 import com.example.jh.rxhapp.activity.CameraLiveWallpaperActivity;
 import com.example.jh.rxhapp.activity.CompressBmpActivity;
 import com.example.jh.rxhapp.activity.CustomViewActivity;
 import com.example.jh.rxhapp.activity.DialogActivity;
+import com.example.jh.rxhapp.activity.DonghuaActivity;
+import com.example.jh.rxhapp.activity.DuoXianChengActivity;
 import com.example.jh.rxhapp.activity.ExecutorActivity;
 import com.example.jh.rxhapp.activity.FactoryActivity;
 import com.example.jh.rxhapp.activity.FansheActivity;
@@ -32,6 +36,7 @@ import com.example.jh.rxhapp.activity.MaterialDesignActivity;
 import com.example.jh.rxhapp.activity.ObserverActivity;
 import com.example.jh.rxhapp.activity.PDFActivity;
 import com.example.jh.rxhapp.activity.PlayLiveActivity;
+import com.example.jh.rxhapp.activity.ProxyActivity;
 import com.example.jh.rxhapp.activity.RefreshActivity;
 import com.example.jh.rxhapp.activity.SmsActivity;
 import com.example.jh.rxhapp.activity.SortActivity;
@@ -42,7 +47,10 @@ import com.example.jh.rxhapp.activity.ViewFlipperActivity;
 import com.example.jh.rxhapp.activity.ViewPager1Activity;
 import com.example.jh.rxhapp.activity.ViewPagerActivity;
 import com.example.jh.rxhapp.activity.WindowActivity;
+import com.example.jh.rxhapp.mvp1.MVP1Activity;
+import com.example.jh.rxhapp.mvp2.v.Mvp2Activity;
 import com.example.jh.rxhapp.observer.Observer;
+import com.example.jh.rxhapp.weight.BigImageView;
 import com.mob.tools.MobUIShell;
 
 import java.util.ArrayList;
@@ -94,7 +102,12 @@ public class MainRecycleAdapter extends RecyclerView.Adapter {
         mList.add("IO流");
         mList.add("反射");
         mList.add("仿淘宝滚动条");
-
+        mList.add("蓝牙");
+        mList.add("动画");
+        mList.add("多线程");
+        mList.add("MVP");
+        mList.add("mvp2");
+        mList.add("代理模式");
         mList.add("喜欢的点个star");
 
 
@@ -144,7 +157,9 @@ public class MainRecycleAdapter extends RecyclerView.Adapter {
                     } else if (getAdapterPosition() == 4) {
                         mContext.startActivity(new Intent(mContext, MagicWallPaperActivity.class));
                     } else if (getAdapterPosition() == 5) {
-                        mContext.startActivity(new Intent(mContext, IPActivity.class));
+                        Intent intent = new Intent(mContext, IPActivity.class);
+                        intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+                        mContext.startActivity(intent);
                     } else if (getAdapterPosition() == 6) {
                         mContext.startActivity(new Intent(mContext, ViewPagerActivity.class));
                     } else if (getAdapterPosition() == 7) {
@@ -152,7 +167,7 @@ public class MainRecycleAdapter extends RecyclerView.Adapter {
                     } else if (getAdapterPosition() == 8) {
                         mContext.startActivity(new Intent(mContext, TestServiceActivity.class));
                     } else if (getAdapterPosition() == 9) {
-                        mContext.startActivity(new Intent(mContext, CustomViewActivity.class));
+                        mContext.startActivity(new Intent(mContext, BigImageActivity.class));
                     } else if (getAdapterPosition() == 10) {
                         mContext.startActivity(new Intent(mContext, ViewActivity.class));
                     } else if (getAdapterPosition() == 11) {
@@ -195,6 +210,18 @@ public class MainRecycleAdapter extends RecyclerView.Adapter {
                         mContext.startActivity(new Intent(mContext, FansheActivity.class));
                     }else if (getAdapterPosition() == 30) {
                         mContext.startActivity(new Intent(mContext, ViewFlipperActivity.class));
+                    }else if (getAdapterPosition() == 31) {
+                        mContext.startActivity(new Intent(mContext, BluetoothActivity.class));
+                    }else if (getAdapterPosition() == 32) {
+                        mContext.startActivity(new Intent(mContext, DonghuaActivity.class));
+                    }else if (getAdapterPosition() == 33) {
+                        mContext.startActivity(new Intent(mContext, DuoXianChengActivity.class));
+                    }else if (getAdapterPosition() == 34) {
+                        mContext.startActivity(new Intent(mContext, MVP1Activity.class));
+                    }else if (getAdapterPosition() == 35) {
+                        mContext.startActivity(new Intent(mContext, Mvp2Activity.class));
+                    }else if (getAdapterPosition() == 36) {
+                        mContext.startActivity(new Intent(mContext, ProxyActivity.class));
                     }
                     break;
                 default:

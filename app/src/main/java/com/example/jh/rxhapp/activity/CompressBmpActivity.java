@@ -2,16 +2,11 @@ package com.example.jh.rxhapp.activity;
 
 import android.Manifest;
 import android.app.Dialog;
-import android.content.ContentValues;
-import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
-import android.net.Uri;
-import android.provider.MediaStore;
 import android.support.v4.app.ActivityCompat;
 import android.support.v4.content.ContextCompat;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
@@ -23,15 +18,13 @@ import android.widget.ListView;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import com.example.jh.rxhapp.Constants;
 import com.example.jh.rxhapp.R;
-import com.example.jh.rxhapp.bean.CompressBean;
-import com.example.jh.rxhapp.utils.CompressBmpToFile;
+import com.example.jh.rxhapp.utils.utils;
+import com.example.jh.rxhapp.weight.BigImageView;
 
 import java.io.File;
 import java.io.IOException;
-import java.util.ArrayList;
-import java.util.HashMap;
+import java.io.InputStream;
 import java.util.List;
 
 import cn.finalteam.galleryfinal.GalleryFinal;
@@ -58,13 +51,10 @@ public class CompressBmpActivity extends BaseActivity implements View.OnClickLis
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         initView();
-
         if (ContextCompat.checkSelfPermission(this, Manifest.permission.WRITE_EXTERNAL_STORAGE)
                 != PackageManager.PERMISSION_GRANTED) {
             ActivityCompat.requestPermissions(this, new String[]{Manifest.permission.WRITE_EXTERNAL_STORAGE}, 100);
         }
-
-
     }
 
     private void initView() {
@@ -74,8 +64,13 @@ public class CompressBmpActivity extends BaseActivity implements View.OnClickLis
         mYuantuText = (TextView) findViewById(R.id.compress_yuantu_text);
         mYasuoText = (TextView) findViewById(R.id.compress_yasuo_text);
         mButton.setOnClickListener(this);
-        int measuredHeight = mButton.getMeasuredHeight();
-        int width = mButton.getWidth();
+
+        BigImageView bigImageView = (BigImageView) findViewById(R.id.big_image);
+        try {
+            InputStream inputStream = getAssets().open("bigimage.jpg");
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
 
     }
 
@@ -83,8 +78,6 @@ public class CompressBmpActivity extends BaseActivity implements View.OnClickLis
     public void onClick(View v) {
         switch (v.getId()) {
             case R.id.compress_yasuo_button:
-                //开启相册
-                // GalleryFinal.openGallerySingle(REQUEST_CODE_GALLERY, new Myhander());
                 showPickPhotoDialog();
                 break;
             default:
@@ -105,7 +98,6 @@ public class CompressBmpActivity extends BaseActivity implements View.OnClickLis
                 switch (position) {
                     case 0:
                         GalleryFinal.openCamera(REQUEST_CODE_CAMERA, new Myhander());
-                        //showCameraAction();
                         break;
                     case 1:
                         GalleryFinal.openGallerySingle(REQUEST_CODE_GALLERY, new Myhander());
@@ -124,9 +116,8 @@ public class CompressBmpActivity extends BaseActivity implements View.OnClickLis
         @Override
         public void onHanlderSuccess(int reqeustCode, List<PhotoInfo> resultList) {
             String photoPath = resultList.get(0).getPhotoPath();
-            File file = new File(photoPath);
-            initBitmap(photoPath, file);
-            compressBitmap(resultList);
+            initBitmap(photoPath);
+            compressBitmap(photoPath);
         }
 
         @Override
@@ -135,34 +126,12 @@ public class CompressBmpActivity extends BaseActivity implements View.OnClickLis
         }
     }
 
-    private void compressBitmap(List<PhotoInfo> photoPath) {
-        //Bitmap bitmap1 = BitmapUtils.compressBimap(photoPath, maxlong);
-        mYasuoText.setText("正在压缩");
-        CompressBmpToFile.getFile(new CompressBmpToFile.CompressBitmap() {
-            @Override
-            public void toFile(HashMap<String, CompressBean> map) {
-                CompressBean compressBean = map.get(CompressBmpToFile.KEY);
-                float fileSize = getFileSize(compressBean.file);
-                Bitmap bitmap = BitmapFactory.decodeFile(compressBean.path);
-                float bitmapsize = getBitmapsize(bitmap);
-                mYasuoText.setText("压缩后：bitmapsize=" + bitmapsize + "MB / filesize=" + fileSize);
-                mYasuoImage.setImageBitmap(bitmap);
-            }
-        }, photoPath, "renyasuo", this);
-
-    }
-
-    private void initBitmap(String photoPath, File file) {
+    private void initBitmap(String photoPath) {
         Bitmap bitmap = BitmapFactory.decodeFile(photoPath);
         float bitmapcount = getBitmapsize(bitmap);
-        float filecount = getFileSize(file);
-        mYuantuText.setText("原图：bitmapsize=" + bitmapcount + "MB / filesize=" + filecount);
+        mYuantuText.setText("原图：图片占内存大小=" + bitmapcount + "MB / 宽度=" + bitmap.getWidth() + "高度=" + bitmap.getHeight());
+        Log.d("mmm", "原图：图片占内存大小=" + bitmapcount + "MB / 宽度=" + bitmap.getWidth() + "高度=" + bitmap.getHeight());
         mYuantuImage.setImageBitmap(bitmap);
-    }
-
-    private float getFileSize(File file) {
-        float i1 = file.length() / 1024;
-        return i1 / 1024;
     }
 
     private float getBitmapsize(Bitmap bitmap) {
@@ -170,32 +139,29 @@ public class CompressBmpActivity extends BaseActivity implements View.OnClickLis
         return i / 1024;
     }
 
-    private void showCameraAction() {
-        Intent intent = new Intent(MediaStore.ACTION_IMAGE_CAPTURE);
-        File dir = new File(Constants.IMAGE);
-        if (!dir.exists()) {
-            dir.mkdirs();
-        }
-        if (intent.resolveActivity(this.getPackageManager()) != null) {
-            long l = System.currentTimeMillis();
-            String time = String.valueOf(l);
-            mTmpFile = new File(Constants.IMAGE + time);
-
-            if (mTmpFile != null) {
-                /*获取当前系统的android版本号*/
-                int currentapiVersion = android.os.Build.VERSION.SDK_INT;
-                Log.e("currentapiVersion", "currentapiVersion====>" + currentapiVersion);
-                ContentValues contentValues = new ContentValues(1);
-                contentValues.put(MediaStore.Images.Media.DATA, mTmpFile.getAbsolutePath());
-                Uri uri = this.getContentResolver().insert(MediaStore.Images.Media.EXTERNAL_CONTENT_URI, contentValues);
-                intent.putExtra(MediaStore.EXTRA_OUTPUT, uri);
-                startActivityForResult(intent, REQUEST_CAMERA);
-            } else {
-                Toast.makeText(this, "图片不存在", Toast.LENGTH_SHORT).show();
-            }
-        } else {
-            Toast.makeText(this, "相机不存在", Toast.LENGTH_SHORT).show();
-        }
-
+    private void compressBitmap(String photoPath) {
+        BitmapFactory.Options options = new BitmapFactory.Options();
+        //不获取图片，不加载到内存中，只返回图片属性
+        options.inJustDecodeBounds = true;
+        BitmapFactory.decodeFile(photoPath, options);
+        Log.d("mmm", "图片地址" + photoPath);
+        //图片的宽高
+        int outHeight = options.outHeight;
+        int outWidth = options.outWidth;
+        Log.d("mmm", "图片宽=" + outWidth + "图片高=" + outHeight);
+        //计算采样率
+        int i = utils.computeSampleSize(options, -1, 1000 * 1000);
+        //设置采样率，不能小于1 假如是2 则宽为之前的1/2，高为之前的1/2，一共缩小1/4 一次类推
+        options.inSampleSize = i;
+        Log.d("mmm", "采样率为=" + i);
+        //图片格式压缩
+        options.inPreferredConfig = Bitmap.Config.RGB_565;
+        options.inJustDecodeBounds = false;
+        Bitmap bitmap = BitmapFactory.decodeFile(photoPath, options);
+        float bitmapsize = getBitmapsize(bitmap);
+        mYasuoText.setText("压缩后：图片占内存大小" + bitmapsize + "MB / 宽度=" + bitmap.getWidth() + "高度=" + bitmap.getHeight());
+        Log.d("mmm", "压缩后：图片占内存大小" + bitmapsize + "MB / 宽度=" + bitmap.getWidth() + "高度=" + bitmap.getHeight());
+        mYasuoImage.setImageBitmap(bitmap);
     }
+
 }

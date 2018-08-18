@@ -65,8 +65,6 @@ public class CompressBmpToFile {
             int i = utils.computeSampleSize(opts, -1, 1000 * 1000);
             opts.inSampleSize = i;
             opts.inJustDecodeBounds = false;
-            opts.inInputShareable = true;
-            opts.inPurgeable = true;
             opts.inPreferredConfig = Bitmap.Config.ARGB_4444;
             Bitmap bitmap = BitmapFactory.decodeFile(list.get(0).getPhotoPath(), opts);
             int byteCount = bitmap.getByteCount();
@@ -89,11 +87,11 @@ public class CompressBmpToFile {
         try {
             ByteArrayOutputStream baos = new ByteArrayOutputStream();
             int options = 80;
-            bitmap.compress(Bitmap.CompressFormat.PNG, options, baos);
+            bitmap.compress(Bitmap.CompressFormat.JPEG, options, baos);
             while (baos.toByteArray().length / 1024 > 0.5 * 1024) {
                 baos.reset();
                 options -= 10;
-                bitmap.compress(Bitmap.CompressFormat.PNG, options, baos);
+                bitmap.compress(Bitmap.CompressFormat.JPEG, options, baos);
             }
             FileOutputStream fos = new FileOutputStream(file1);
             fos.write(baos.toByteArray());

@@ -9,6 +9,7 @@ import android.widget.Button;
  */
 
 public class ScrollButton extends Button {
+
     public ScrollButton(Context context) {
         super(context);
     }

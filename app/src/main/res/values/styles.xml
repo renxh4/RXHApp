@@ -7,6 +7,7 @@
         <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
         <item name="colorAccent">@color/colorAccent</item>
     </style>
+
     <style name="main_radiobutton_icon">
         <item name="android:background">#00000000</item>
         <item name="android:layout_width">0dp</item>
@@ -17,5 +18,9 @@
         <item name="android:textColor">@color/radio_button_color_selector</item>
         <item name="android:button">@null</item>
     </style>
+
+    <style name="AppTheme.AppBarOverlay" parent="ThemeOverlay.AppCompat.Dark.ActionBar"/>
+
+    <style name="AppTheme.PopupOverlay" parent="ThemeOverlay.AppCompat.Light"/>
 
 </resources>

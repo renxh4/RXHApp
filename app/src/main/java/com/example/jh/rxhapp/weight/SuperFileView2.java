@@ -3,6 +3,7 @@ package com.example.jh.rxhapp.weight;
 import android.content.Context;
 import android.os.Bundle;
 import android.os.Environment;
+import android.support.v7.widget.AppCompatAutoCompleteTextView;
 import android.text.TextUtils;
 import android.util.AttributeSet;
 import android.widget.FrameLayout;

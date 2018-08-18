@@ -1,15 +1,15 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/activity_compress_bmp"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:orientation="vertical"
-    android:paddingBottom="@dimen/activity_vertical_margin"
-    android:paddingLeft="@dimen/activity_horizontal_margin"
-    android:paddingRight="@dimen/activity_horizontal_margin"
-    android:paddingTop="@dimen/activity_vertical_margin"
-    tools:context="com.example.jh.rxhapp.activity.CompressBmpActivity">
+              xmlns:tools="http://schemas.android.com/tools"
+              android:id="@+id/activity_compress_bmp"
+              android:layout_width="match_parent"
+              android:layout_height="match_parent"
+              android:orientation="vertical"
+              android:paddingBottom="@dimen/activity_vertical_margin"
+              android:paddingLeft="@dimen/activity_horizontal_margin"
+              android:paddingRight="@dimen/activity_horizontal_margin"
+              android:paddingTop="@dimen/activity_vertical_margin"
+              tools:context="com.example.jh.rxhapp.activity.CompressBmpActivity">
 
     <ScrollView
         android:layout_width="match_parent"
@@ -25,35 +25,40 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="选择图片"
-                android:textSize="20sp" />
+                android:textSize="20sp"/>
 
             <TextView
                 android:id="@+id/compress_yuantu_text"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="原图大小"
-                android:textSize="20sp" />
+                android:textSize="20sp"/>
 
             <ImageView
                 android:id="@+id/compress_yuantu_image"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:scaleType="fitCenter"
-                android:src="@mipmap/friend" />
+                android:src="@mipmap/friend"/>
 
             <TextView
                 android:id="@+id/compress_yasuo_text"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="压缩后大小"
-                android:textSize="20sp" />
+                android:textSize="20sp"/>
 
             <ImageView
                 android:id="@+id/compress_yasuo_image"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:scaleType="fitCenter"
-                android:src="@mipmap/friend" />
+                android:src="@mipmap/friend"/>
+
+            <com.example.jh.rxhapp.weight.BigImageView
+                android:id="@+id/big_image"
+                android:layout_width="500dp"
+                android:layout_height="500dp"/>
         </LinearLayout>
     </ScrollView>
 </LinearLayout>
