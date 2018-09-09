@@ -30,14 +30,14 @@ public class TcpChatClient extends Thread {
          * 1.实例化一个Socket对象，要指定IP和端口；
          * 2.如果要发送数据，通过Socket对象获取输出流：OutputStream
          * 3.输出数据；
-         * 4.释放资源：
+         * 4.不断读取数据
          */
     @Override
     public void run() {
 
         try {
             //实例化一个Socket
-            mSocket = new Socket("127.0.0.1", 8888);
+            mSocket = new Socket("127.0.0.1", 6666);
             //获取输出流
             mOutputStream = mSocket.getOutputStream();
             //发送消息
@@ -46,6 +46,7 @@ public class TcpChatClient extends Thread {
             InputStream inputStream = mSocket.getInputStream();
             byte[] bytes = new byte[1024];
             int len = 0;
+            //不断的读取数据
             while (true) {
                 len = inputStream.read(bytes);
                 String msg = new String(bytes, 0, len);

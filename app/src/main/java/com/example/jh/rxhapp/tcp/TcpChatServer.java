@@ -31,13 +31,13 @@ public class TcpChatServer extends Thread {
             * 	 调用ServerSocket的accept()方法等待连接：
             * 2.由于要读取数据，所以通过ServerSocket对象获取"输入流"--InputStream
             * 3.读取信息；
-            * 4.释放资源；
+            * 4.获取输出流，发送消息
             */
     @Override
     public void run() {
         try {
             //实例化ServerSocket
-            ServerSocket serverSocket = new ServerSocket(8888);
+            ServerSocket serverSocket = new ServerSocket(6666);
             //等待链接
             Log.d("mmm", "服务器等待链接");
             mSocket = serverSocket.accept();
@@ -48,6 +48,7 @@ public class TcpChatServer extends Thread {
             mOutputStream = mSocket.getOutputStream();
             //读取消息
             byte[] bytes = new byte[1024];
+            //不断的读取数据
             while (true) {
                 int len = inputStream.read(bytes);
                 String s = new String(bytes, 0, len);
@@ -62,6 +63,10 @@ public class TcpChatServer extends Thread {
 
     }
 
+    /**
+     * 发送消息
+     * @param msg
+     */
     public void sendMessage(String msg) {
         try {
             mOutputStream.write(msg.getBytes());
