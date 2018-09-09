@@ -171,6 +171,12 @@
         </activity>
         <activity android:name=".activity.ProxyActivity">
         </activity>
+        <activity android:name=".activity.UDPActivity">
+        </activity>
+        <activity android:name=".activity.TCPActivity">
+        </activity>
+        <activity android:name=".tcp.TcpChatClientActivity">
+        </activity>
     </application>
 
 </manifest>

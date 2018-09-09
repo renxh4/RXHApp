@@ -1,11 +1,15 @@
 package com.example.jh.rxhapp.activity;
 
 import android.os.Bundle;
+import android.util.Log;
 
 import com.example.jh.rxhapp.Constants;
 import com.example.jh.rxhapp.R;
 
 import java.io.File;
+import java.net.Inet4Address;
+import java.net.InetAddress;
+import java.net.UnknownHostException;
 
 public class IOActivity extends BaseActivity {
 

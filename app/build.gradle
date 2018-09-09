@@ -12,15 +12,24 @@ android {
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
         //X5兼容64位手机
         ndk {
-            abiFilters "armeabi", "armeabi-v7a", "x86", "mips"
+            abiFilters "armeabi", "armeabi-v7a", "x86", "mips","abis"
         }
     }
 
-    externalNativeBuild {
+    splits {
+        abi {
+            enable true
+            reset()
+            include 'x86', 'armeabi-v7a','x86_64'
+            universalApk true
+        }
+    }
+
+    /*externalNativeBuild {
         cmake {
             path 'CMakeLists.txt'
         }
-    }
+    }*/
 }
 
 task(yugangshuo).doLast {

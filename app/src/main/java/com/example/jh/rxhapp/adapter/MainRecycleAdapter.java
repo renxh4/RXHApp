@@ -40,8 +40,10 @@ import com.example.jh.rxhapp.activity.ProxyActivity;
 import com.example.jh.rxhapp.activity.RefreshActivity;
 import com.example.jh.rxhapp.activity.SmsActivity;
 import com.example.jh.rxhapp.activity.SortActivity;
+import com.example.jh.rxhapp.activity.TCPActivity;
 import com.example.jh.rxhapp.activity.TestServiceActivity;
 import com.example.jh.rxhapp.activity.ThreadLocalActivity;
+import com.example.jh.rxhapp.activity.UDPActivity;
 import com.example.jh.rxhapp.activity.ViewActivity;
 import com.example.jh.rxhapp.activity.ViewFlipperActivity;
 import com.example.jh.rxhapp.activity.ViewPager1Activity;
@@ -50,6 +52,7 @@ import com.example.jh.rxhapp.activity.WindowActivity;
 import com.example.jh.rxhapp.mvp1.MVP1Activity;
 import com.example.jh.rxhapp.mvp2.v.Mvp2Activity;
 import com.example.jh.rxhapp.observer.Observer;
+import com.example.jh.rxhapp.tcp.TcpChatClientActivity;
 import com.example.jh.rxhapp.weight.BigImageView;
 import com.mob.tools.MobUIShell;
 
@@ -108,6 +111,8 @@ public class MainRecycleAdapter extends RecyclerView.Adapter {
         mList.add("MVP");
         mList.add("mvp2");
         mList.add("代理模式");
+        mList.add("UDP");
+        mList.add("TCP");
         mList.add("喜欢的点个star");
 
 
@@ -222,6 +227,10 @@ public class MainRecycleAdapter extends RecyclerView.Adapter {
                         mContext.startActivity(new Intent(mContext, Mvp2Activity.class));
                     }else if (getAdapterPosition() == 36) {
                         mContext.startActivity(new Intent(mContext, ProxyActivity.class));
+                    }else if (getAdapterPosition() == 37) {
+                        mContext.startActivity(new Intent(mContext, UDPActivity.class));
+                    }else if (getAdapterPosition() == 38) {
+                        mContext.startActivity(new Intent(mContext, TcpChatClientActivity.class));
                     }
                     break;
                 default:

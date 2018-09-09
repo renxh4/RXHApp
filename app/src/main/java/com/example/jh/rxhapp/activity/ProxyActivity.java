@@ -2,6 +2,7 @@ package com.example.jh.rxhapp.activity;
 
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.util.Log;
 
 import com.example.jh.rxhapp.R;
 import com.example.jh.rxhapp.proxy.ProxyHandler;
@@ -12,6 +13,8 @@ import com.example.jh.rxhapp.proxy.Subject;
 import java.lang.reflect.Proxy;
 
 public class ProxyActivity extends AppCompatActivity {
+
+    public String msg;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -32,4 +35,5 @@ public class ProxyActivity extends AppCompatActivity {
         proxy.request();
 
     }
+
 }
