@@ -112,7 +112,7 @@ public class MainRecycleAdapter extends RecyclerView.Adapter {
         mList.add("mvp2");
         mList.add("代理模式");
         mList.add("UDP");
-        mList.add("TCP");
+        mList.add("TCP实现点对点聊天");
         mList.add("喜欢的点个star");
 
 
@@ -191,45 +191,45 @@ public class MainRecycleAdapter extends RecyclerView.Adapter {
                         mContext.startActivity(new Intent(mContext, JNIActivity.class));
                     } else if (getAdapterPosition() == 18) {
                         mContext.startActivity(new Intent(mContext, InstanstActivity.class));
-                    }else if (getAdapterPosition() == 19) {
+                    } else if (getAdapterPosition() == 19) {
                         mContext.startActivity(new Intent(mContext, BuildActivity.class));
-                    }else if (getAdapterPosition() == 20) {
+                    } else if (getAdapterPosition() == 20) {
                         mContext.startActivity(new Intent(mContext, FactoryActivity.class));
-                    }else if (getAdapterPosition() == 21) {
+                    } else if (getAdapterPosition() == 21) {
                         mContext.startActivity(new Intent(mContext, AbFactoryActivity.class));
-                    }else if (getAdapterPosition() == 22) {
+                    } else if (getAdapterPosition() == 22) {
                         mContext.startActivity(new Intent(mContext, ObserverActivity.class));
-                    }else if (getAdapterPosition() == 23) {
+                    } else if (getAdapterPosition() == 23) {
                         mContext.startActivity(new Intent(mContext, ViewPager1Activity.class));
-                    }else if (getAdapterPosition() == 24) {
+                    } else if (getAdapterPosition() == 24) {
                         mContext.startActivity(new Intent(mContext, GestureActivity.class));
-                    }else if (getAdapterPosition() == 25) {
+                    } else if (getAdapterPosition() == 25) {
                         mContext.startActivity(new Intent(mContext, SmsActivity.class));
-                    }else if (getAdapterPosition() == 26) {
+                    } else if (getAdapterPosition() == 26) {
                         mContext.startActivity(new Intent(mContext, RefreshActivity.class));
-                    }else if (getAdapterPosition() == 27) {
+                    } else if (getAdapterPosition() == 27) {
                         mContext.startActivity(new Intent(mContext, SortActivity.class));
-                    }else if (getAdapterPosition() == 28) {
+                    } else if (getAdapterPosition() == 28) {
                         mContext.startActivity(new Intent(mContext, IOActivity.class));
-                    }else if (getAdapterPosition() == 29) {
+                    } else if (getAdapterPosition() == 29) {
                         mContext.startActivity(new Intent(mContext, FansheActivity.class));
-                    }else if (getAdapterPosition() == 30) {
+                    } else if (getAdapterPosition() == 30) {
                         mContext.startActivity(new Intent(mContext, ViewFlipperActivity.class));
-                    }else if (getAdapterPosition() == 31) {
+                    } else if (getAdapterPosition() == 31) {
                         mContext.startActivity(new Intent(mContext, BluetoothActivity.class));
-                    }else if (getAdapterPosition() == 32) {
+                    } else if (getAdapterPosition() == 32) {
                         mContext.startActivity(new Intent(mContext, DonghuaActivity.class));
-                    }else if (getAdapterPosition() == 33) {
+                    } else if (getAdapterPosition() == 33) {
                         mContext.startActivity(new Intent(mContext, DuoXianChengActivity.class));
-                    }else if (getAdapterPosition() == 34) {
+                    } else if (getAdapterPosition() == 34) {
                         mContext.startActivity(new Intent(mContext, MVP1Activity.class));
-                    }else if (getAdapterPosition() == 35) {
+                    } else if (getAdapterPosition() == 35) {
                         mContext.startActivity(new Intent(mContext, Mvp2Activity.class));
-                    }else if (getAdapterPosition() == 36) {
+                    } else if (getAdapterPosition() == 36) {
                         mContext.startActivity(new Intent(mContext, ProxyActivity.class));
-                    }else if (getAdapterPosition() == 37) {
+                    } else if (getAdapterPosition() == 37) {
                         mContext.startActivity(new Intent(mContext, UDPActivity.class));
-                    }else if (getAdapterPosition() == 38) {
+                    } else if (getAdapterPosition() == 38) {
                         mContext.startActivity(new Intent(mContext, TcpChatClientActivity.class));
                     }
                     break;
