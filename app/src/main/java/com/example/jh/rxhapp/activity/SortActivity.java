@@ -32,6 +32,15 @@ public class SortActivity extends BaseActivity {
         //quickSort(arr,0,arr.length-1);
         sort4(arr);
 
+        sort6();
+
+    }
+
+    /**
+     * 输入一个矩阵，按照从外向里以顺时针的顺序依次打印出每一个数字
+     */
+    private void sort6() {
+
     }
 
 

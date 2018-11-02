@@ -1,4 +1,4 @@
-package com.example.jh.rxhapp.utils;
+package com.example.jh.rxhapp.db;
 
 import android.content.Context;
 import android.database.sqlite.SQLiteDatabase;

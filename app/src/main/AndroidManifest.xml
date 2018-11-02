@@ -1,29 +1,29 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-          package="com.example.jh.rxhapp">
+    package="com.example.jh.rxhapp">
 
-    <uses-permission android:name="android.permission.CAMERA"/>
-    <uses-permission android:name="android.permission.SET_WALLPAPER"/>
-    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE"/>
-    <uses-permission android:name="android.permission.CHANGE_WIFI_STATE"/>
-    <uses-permission android:name="android.permission.WAKE_LOCK"/>
-    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
-    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE"/>
-    <uses-permission android:name="android.permission.INTERNET"/>
-    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"/>
-    <uses-permission android:name="android.permission.READ_PHONE_STATE"/>
-    <uses-permission android:name="android.permission.CALL_PHONE"/>
-    <uses-permission android:name="android.permission.READ_LOGS"/>
-    <uses-permission android:name="android.permission.RECORD_AUDIO"/>
-    <uses-permission android:name="android.permission.SYSTEM_ALERT_WINDOW"/>
-    <uses-permission android:name="android.permission.READ_CONTACTS"/>
-    <uses-permission android:name="android.permission.RECEIVE_SMS"/>
-    <uses-permission android:name="android.permission.READ_SMS"/>
-    <uses-permission android:name="android.permission.GET_TASKS"/>
-    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION"/>
+    <uses-permission android:name="android.permission.CAMERA" />
+    <uses-permission android:name="android.permission.SET_WALLPAPER" />
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
+    <uses-permission android:name="android.permission.CHANGE_WIFI_STATE" />
+    <uses-permission android:name="android.permission.WAKE_LOCK" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.READ_PHONE_STATE" />
+    <uses-permission android:name="android.permission.CALL_PHONE" />
+    <uses-permission android:name="android.permission.READ_LOGS" />
+    <uses-permission android:name="android.permission.RECORD_AUDIO" />
+    <uses-permission android:name="android.permission.SYSTEM_ALERT_WINDOW" />
+    <uses-permission android:name="android.permission.READ_CONTACTS" />
+    <uses-permission android:name="android.permission.RECEIVE_SMS" />
+    <uses-permission android:name="android.permission.READ_SMS" />
+    <uses-permission android:name="android.permission.GET_TASKS" />
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
 
-    <uses-feature android:name="android.hardware.Camera"/>
-    <uses-feature android:name="android.hardware.camera.autofocus"/>
+    <uses-feature android:name="android.hardware.Camera" />
+    <uses-feature android:name="android.hardware.camera.autofocus" />
 
     <application
         android:name=".BaseApplication"
@@ -34,24 +34,24 @@
         android:theme="@style/AppTheme">
         <activity android:name=".MainActivity">
             <intent-filter>
-                <action android:name="android.intent.action.MAIN"/>
+                <action android:name="android.intent.action.MAIN" />
 
-                <category android:name="android.intent.category.LAUNCHER"/>
+                <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
         <activity
             android:name="com.mob.tools.MobUIShell"
             android:configChanges="keyboardHidden|orientation|screenSize"
             android:theme="@android:style/Theme.Translucent.NoTitleBar"
-            android:windowSoftInputMode="stateHidden|adjustResize"/>
-        <activity android:name=".activity.BaseActivity"/>
+            android:windowSoftInputMode="stateHidden|adjustResize" />
+        <activity android:name=".activity.BaseActivity" />
         <activity
-            android:name=".activity.ViewPagerActivity"
-            android:launchMode="singleTask"/>
-        <activity android:name=".activity.MaterialDesignActivity"/>
-        <activity android:name=".activity.CompressBmpActivity"/>
-        <activity android:name=".activity.HtmlToTextActivity"/>
-        <activity android:name=".activity.CameraLiveWallpaperActivity"/>
+            android:name=".activity.DataBaseActivity"
+            android:launchMode="singleTask" />
+        <activity android:name=".activity.MaterialDesignActivity" />
+        <activity android:name=".activity.CompressBmpActivity" />
+        <activity android:name=".activity.HtmlToTextActivity" />
+        <activity android:name=".activity.CameraLiveWallpaperActivity" />
         <!-- 配置实时壁纸Service -->
         <service
             android:name=".utils.CameraLiveWallpaper"
@@ -60,15 +60,15 @@
 
             <!-- 为实时壁纸配置intent-filter -->
             <intent-filter>
-                <action android:name="android.service.wallpaper.WallpaperService"/>
+                <action android:name="android.service.wallpaper.WallpaperService" />
             </intent-filter>
             <!-- 为实时壁纸配置meta-data -->
             <meta-data
                 android:name="android.service.wallpaper"
-                android:resource="@xml/livewallpaper"/>
+                android:resource="@xml/livewallpaper" />
         </service>
 
-        <activity android:name=".activity.MagicWallPaperActivity"/>
+        <activity android:name=".activity.MagicWallPaperActivity" />
 
         <!-- 配置实时壁纸Service -->
         <service
@@ -79,55 +79,44 @@
 
             <!-- 为实时壁纸配置intent-filter -->
             <intent-filter>
-                <action android:name="android.service.wallpaper.WallpaperService"/>
+                <action android:name="android.service.wallpaper.WallpaperService" />
             </intent-filter>
             <!-- 为实时壁纸配置meta-data -->
             <meta-data
                 android:name="android.service.wallpaper"
-                android:resource="@xml/livewallpaper"/>
+                android:resource="@xml/livewallpaper" />
         </service>
 
-        <activity android:name=".activity.IPActivity"/>
-        <activity android:name=".activity.LiveActivity"/>
-        <activity android:name=".activity.PlayLiveActivity"/>
+        <activity android:name=".activity.IPActivity" />
+        <activity android:name=".activity.LiveActivity" />
+        <activity android:name=".activity.PlayLiveActivity" />
 
         <service
             android:name=".service.MyService"
             android:enabled="true"
-            android:exported="true"/>
+            android:exported="true" />
         <service
             android:name=".service.MyIntentService"
-            android:exported="false"/>
+            android:exported="false" />
 
-        <activity android:name=".activity.TestServiceActivity"/>
-        <activity android:name=".activity.CustomViewActivity"/>
-        <activity android:name=".activity.ViewActivity"/>
-        <activity android:name=".activity.ListActivity"/>
-        <activity android:name=".activity.WindowActivity"/>
-        <activity android:name=".activity.ExecutorActivity"/>
-        <activity android:name=".activity.DialogActivity"/>
-        <activity android:name=".activity.PDFActivity">
-        </activity>
-        <activity android:name=".activity.ShowPDFActivity">
-        </activity>
-        <activity android:name=".activity.ThreadLocalActivity">
-        </activity>
-        <activity android:name=".activity.JNIActivity">
-        </activity>
-        <activity android:name=".activity.InstanstActivity">
-        </activity>
-        <activity android:name=".activity.BuildActivity">
-        </activity>
-        <activity android:name=".activity.FactoryActivity">
-        </activity>
-        <activity android:name=".activity.AbFactoryActivity">
-        </activity>
-        <activity android:name=".activity.ObserverActivity">
-        </activity>
-        <activity android:name=".activity.ViewPager1Activity">
-        </activity>
-        <activity android:name=".activity.GestureActivity">
-        </activity>
+        <activity android:name=".activity.TestServiceActivity" />
+        <activity android:name=".activity.CustomViewActivity" />
+        <activity android:name=".activity.ViewActivity" />
+        <activity android:name=".activity.ListActivity" />
+        <activity android:name=".activity.WindowActivity" />
+        <activity android:name=".activity.ExecutorActivity" />
+        <activity android:name=".activity.DialogActivity" />
+        <activity android:name=".activity.PDFActivity"></activity>
+        <activity android:name=".activity.ShowPDFActivity"></activity>
+        <activity android:name=".activity.ThreadLocalActivity"></activity>
+        <activity android:name=".activity.JNIActivity"></activity>
+        <activity android:name=".activity.InstanstActivity"></activity>
+        <activity android:name=".activity.BuildActivity"></activity>
+        <activity android:name=".activity.FactoryActivity"></activity>
+        <activity android:name=".activity.AbFactoryActivity"></activity>
+        <activity android:name=".activity.ObserverActivity"></activity>
+        <activity android:name=".activity.ViewPager1Activity"></activity>
+        <activity android:name=".activity.GestureActivity"></activity>
 
         <!-- 通过AndroidManifest配置AppKey和AppSecret，如果你选择通过代码配置，则不需要配置以下meta-data -->
         <!--
@@ -139,43 +128,29 @@
             android:value="f10e6fb1b4f12baeb401a56d825f3ddd"/>
         -->
 
-        <activity android:name=".activity.SmsActivity">
-        </activity>
-        <activity android:name=".activity.RefreshActivity">
-        </activity>
-        <activity android:name=".activity.SortActivity">
-        </activity>
-        <activity android:name=".activity.SocketActivity">
-        </activity>
-        <activity android:name=".activity.IOActivity">
-        </activity>
-        <activity android:name=".activity.FansheActivity">
-        </activity>
-        <activity android:name=".activity.CActivity">
-        </activity>
-        <activity android:name=".activity.ViewFlipperActivity">
-        </activity>
-        <activity android:name=".activity.BluetoothActivity">
-        </activity>
-        <activity android:name=".activity.BigImageActivity">
-        </activity>
-        <activity android:name=".activity.DonghuaActivity">
-        </activity>
-        <activity android:name=".activity.DuoXianChengActivity">
-        </activity>
-        <activity android:name=".mvp1.MVP1Activity">
-        </activity>
-        <activity android:name=".mvp2.v.Base1Activity">
-        </activity>
-        <activity android:name=".mvp2.v.Mvp2Activity">
-        </activity>
-        <activity android:name=".activity.ProxyActivity">
-        </activity>
-        <activity android:name=".activity.UDPActivity">
-        </activity>
-        <activity android:name=".activity.TCPActivity">
-        </activity>
-        <activity android:name=".tcp.TcpChatClientActivity">
+        <activity android:name=".activity.SmsActivity"></activity>
+        <activity android:name=".activity.RefreshActivity"></activity>
+        <activity android:name=".activity.SortActivity"></activity>
+        <activity android:name=".activity.SocketActivity"></activity>
+        <activity android:name=".activity.IOActivity"></activity>
+        <activity android:name=".activity.FansheActivity"></activity>
+        <activity android:name=".activity.CActivity"></activity>
+        <activity android:name=".activity.ViewFlipperActivity"></activity>
+        <activity android:name=".activity.BluetoothActivity"></activity>
+        <activity android:name=".activity.BigImageActivity"></activity>
+        <activity android:name=".activity.DonghuaActivity"></activity>
+        <activity android:name=".activity.DuoXianChengActivity"></activity>
+        <activity android:name=".mvp1.MVP1Activity"></activity>
+        <activity android:name=".mvp2.v.Base1Activity"></activity>
+        <activity android:name=".mvp2.v.Mvp2Activity"></activity>
+        <activity android:name=".activity.ProxyActivity"></activity>
+        <activity android:name=".activity.UDPActivity"></activity>
+        <activity android:name=".activity.TCPActivity"></activity>
+        <activity android:name=".tcp.TcpChatClientActivity"></activity>
+        <activity
+            android:name=".camera.CameraActivity"
+            android:theme="@android:style/Theme.Black.NoTitleBar.Fullscreen">
+
         </activity>
     </application>
 

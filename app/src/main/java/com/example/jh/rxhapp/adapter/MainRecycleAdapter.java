@@ -6,7 +6,6 @@ import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.view.textservice.TextServicesManager;
 import android.widget.Button;
 
 import com.example.jh.rxhapp.R;
@@ -16,7 +15,6 @@ import com.example.jh.rxhapp.activity.BluetoothActivity;
 import com.example.jh.rxhapp.activity.BuildActivity;
 import com.example.jh.rxhapp.activity.CameraLiveWallpaperActivity;
 import com.example.jh.rxhapp.activity.CompressBmpActivity;
-import com.example.jh.rxhapp.activity.CustomViewActivity;
 import com.example.jh.rxhapp.activity.DialogActivity;
 import com.example.jh.rxhapp.activity.DonghuaActivity;
 import com.example.jh.rxhapp.activity.DuoXianChengActivity;
@@ -35,26 +33,22 @@ import com.example.jh.rxhapp.activity.MagicWallPaperActivity;
 import com.example.jh.rxhapp.activity.MaterialDesignActivity;
 import com.example.jh.rxhapp.activity.ObserverActivity;
 import com.example.jh.rxhapp.activity.PDFActivity;
-import com.example.jh.rxhapp.activity.PlayLiveActivity;
 import com.example.jh.rxhapp.activity.ProxyActivity;
 import com.example.jh.rxhapp.activity.RefreshActivity;
 import com.example.jh.rxhapp.activity.SmsActivity;
 import com.example.jh.rxhapp.activity.SortActivity;
-import com.example.jh.rxhapp.activity.TCPActivity;
 import com.example.jh.rxhapp.activity.TestServiceActivity;
 import com.example.jh.rxhapp.activity.ThreadLocalActivity;
 import com.example.jh.rxhapp.activity.UDPActivity;
 import com.example.jh.rxhapp.activity.ViewActivity;
 import com.example.jh.rxhapp.activity.ViewFlipperActivity;
 import com.example.jh.rxhapp.activity.ViewPager1Activity;
-import com.example.jh.rxhapp.activity.ViewPagerActivity;
+import com.example.jh.rxhapp.activity.DataBaseActivity;
 import com.example.jh.rxhapp.activity.WindowActivity;
+import com.example.jh.rxhapp.camera.CameraActivity;
 import com.example.jh.rxhapp.mvp1.MVP1Activity;
 import com.example.jh.rxhapp.mvp2.v.Mvp2Activity;
-import com.example.jh.rxhapp.observer.Observer;
 import com.example.jh.rxhapp.tcp.TcpChatClientActivity;
-import com.example.jh.rxhapp.weight.BigImageView;
-import com.mob.tools.MobUIShell;
 
 import java.util.ArrayList;
 
@@ -74,13 +68,13 @@ public class MainRecycleAdapter extends RecyclerView.Adapter {
 
     private void initList() {
         mList = new ArrayList<>();
-        mList.add("MaterialDesign");
+        mList.add("camera");
         mList.add("图片压缩");
         mList.add("TextViewForHtml");
         mList.add("透明桌面");
         mList.add("视频壁纸");
         mList.add("获取IP");
-        mList.add("tablayout+viewpager");
+        mList.add("数据库");
         mList.add("直播");
         mList.add("handler使用");
         mList.add("自定义view");
@@ -152,7 +146,7 @@ public class MainRecycleAdapter extends RecyclerView.Adapter {
             switch (v.getId()) {
                 case R.id.item_button:
                     if (getAdapterPosition() == 0) {
-                        mContext.startActivity(new Intent(mContext, MaterialDesignActivity.class));
+                        mContext.startActivity(new Intent(mContext, CameraActivity.class));
                     } else if (getAdapterPosition() == 1) {
                         mContext.startActivity(new Intent(mContext, CompressBmpActivity.class));
                     } else if (getAdapterPosition() == 2) {
@@ -166,7 +160,7 @@ public class MainRecycleAdapter extends RecyclerView.Adapter {
                         intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
                         mContext.startActivity(intent);
                     } else if (getAdapterPosition() == 6) {
-                        mContext.startActivity(new Intent(mContext, ViewPagerActivity.class));
+                        mContext.startActivity(new Intent(mContext, DataBaseActivity.class));
                     } else if (getAdapterPosition() == 7) {
                         mContext.startActivity(new Intent(mContext, LiveActivity.class));
                     } else if (getAdapterPosition() == 8) {

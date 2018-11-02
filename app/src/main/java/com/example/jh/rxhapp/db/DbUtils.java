@@ -1,4 +1,4 @@
-package com.example.jh.rxhapp.utils;
+package com.example.jh.rxhapp.db;
 
 import android.content.ContentValues;
 import android.content.Context;
@@ -21,8 +21,8 @@ public class DbUtils {
     private DbUtils(Context context) {
         if (mDataBaseHelper == null) {
             mDataBaseHelper = new DataBaseHelper(context);
+            mWritableDatabase = mDataBaseHelper.getWritableDatabase();
         }
-        mWritableDatabase = mDataBaseHelper.getWritableDatabase();
     }
 
     public static DbUtils getInstants(Context context) {
@@ -57,31 +57,7 @@ public class DbUtils {
         mWritableDatabase.insert("text", null, contentValues);
     }
 
-    /**
-     * 更改数据方法1
-     * 利用sql
-     *
-     * @param name
-     * @param age
-     */
-    public void updataUseSql(String name, int age) {
-        String sql = "updata text set age=" + age + "where name=" + name + ";";
-        mWritableDatabase.execSQL(sql);
-    }
 
-    /**
-     * 更改数据方法2
-     *
-     * @param name
-     * @param age
-     */
-    public void updata(String name, int age) {
-        ContentValues contentValues = new ContentValues();
-        contentValues.put("age", age);
-        String where = "name=?";//修改条件
-        String[] whereArgs = {name};//修改的参数
-        mWritableDatabase.update("text", contentValues, where, whereArgs);
-    }
 
     public void deleteUseSql(String name) {
         String sql = "delete from text where name=" + name + ";";
